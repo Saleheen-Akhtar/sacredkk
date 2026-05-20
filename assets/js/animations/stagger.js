@@ -57,7 +57,7 @@
     }
     };
 
-    if (document.readyState === 'complete') initStagger();
-    else window.addEventListener('load', initStagger);
+    initStagger();
+
   });
 })();

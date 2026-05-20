@@ -35,7 +35,7 @@ $body        = sk_option('about_body', '');
     <div class="sk-about__brand-col reveal d1" itemprop="legalName">
 
       <div class="sk-about__brand"
-           <?php if ( $bg_img ) : ?>style="--hero-img: url('<?php echo esc_url( $bg_img ); ?>')"<?php endif; ?>>
+           <?php if ( $bg_img ) : ?>style="--about-bg: url('<?php echo esc_url( $bg_img ); ?>'); --hero-img: url('<?php echo esc_url( $bg_img ); ?>');"<?php endif; ?>>
         <span class="sk-about__brand-line sk-about__brand-line--sacred">SACRED</span>
         <span class="sk-about__brand-line sk-about__brand-line--kompass">KOMPASS</span>
       </div>

@@ -2,7 +2,7 @@
   position: relative;
   padding-block: var(--sk-section-padding);
   background: var(--ivory);
-  background-image: url('https://sacredkompass.org/wp-content/uploads/2026/05/Loust-background.png');
+  background-image: var(--about-bg, none);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

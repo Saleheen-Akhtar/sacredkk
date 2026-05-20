@@ -57,7 +57,7 @@ if ( $story_query->have_posts() ) {
 $has_stories = ! empty( $stories );
 ?>
 
-<section class="values-section sk-stories-teaser" id="values" aria-labelledby="stories-teaser-heading">
+<section class="values-section sk-stories-teaser" id="values" aria-labelledby="stories-teaser-heading" style="--stories-teaser-bg: url('<?php echo esc_url( sk_option( 'hero_bg_image', '' ) ); ?>'); --about-bg: url('<?php echo esc_url( sk_option( 'hero_bg_image', '' ) ); ?>');">
   <div class="wrap">
 
     <div class="values-header sk-stories-teaser__header">

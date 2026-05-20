@@ -2,7 +2,7 @@
   const app = window.SK = window.SK || {};
   const dom = app.dom;
   if (!dom) return;
-  dom.onReady(() => {
+  dom.onReady('PhilosophyStrip', () => {
     try {
     const pillars = dom.readJSON('sk-philosophy-data');
     const strip = document.getElementById('sk-philosophy-strip');
@@ -33,14 +33,21 @@
       const left = (active - 1 + pillars.length) % pillars.length;
       const right = (active + 1) % pillars.length;
       images.forEach((img, index) => {
+        // clear old classes
+        img.classList.remove('ct-img--active', 'ct-img--left', 'ct-img--right', 'ct-img--hidden');
+        // clear old inline inline style gap
+        img.style.setProperty('--ct-gap', '0px');
+
         if (index === active) {
-          img.style.cssText = 'z-index:3;opacity:1;pointer-events:auto;transform:translateX(0) translateY(0) scale(1) rotateY(0deg);transition:transform .65s cubic-bezier(.25,.46,.45,.94),opacity .45s cubic-bezier(.25,.46,.45,.94);';
+          img.classList.add('ct-img--active');
         } else if (index === left) {
-          img.style.cssText = `z-index:2;opacity:1;pointer-events:auto;transform:translateX(-${currentGap}px) translateY(-${currentGap * 0.8}px) scale(.85) rotateY(15deg);transition:transform .65s cubic-bezier(.25,.46,.45,.94),opacity .45s cubic-bezier(.25,.46,.45,.94);`;
+          img.classList.add('ct-img--left');
+          img.style.setProperty('--ct-gap', currentGap + 'px');
         } else if (index === right) {
-          img.style.cssText = `z-index:2;opacity:1;pointer-events:auto;transform:translateX(${currentGap}px) translateY(-${currentGap * 0.8}px) scale(.85) rotateY(-15deg);transition:transform .65s cubic-bezier(.25,.46,.45,.94),opacity .45s cubic-bezier(.25,.46,.45,.94);`;
+          img.classList.add('ct-img--right');
+          img.style.setProperty('--ct-gap', currentGap + 'px');
         } else {
-          img.style.cssText = 'z-index:1;opacity:0;pointer-events:none;transition:transform .65s cubic-bezier(.25,.46,.45,.94),opacity .45s cubic-bezier(.25,.46,.45,.94);';
+          img.classList.add('ct-img--hidden');
         }
       });
     };

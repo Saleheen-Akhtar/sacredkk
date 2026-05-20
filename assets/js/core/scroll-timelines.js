@@ -41,7 +41,7 @@
         lenis = new LenisCtor({
           autoRaf: false,
           smoothWheel: true,
-          lerp: 0.08
+          lerp: window.SK.motion?.lerp || 0.08
         });
         document.documentElement.classList.add('lenis', 'lenis-smooth');
         lenis.on('scroll', () => {
