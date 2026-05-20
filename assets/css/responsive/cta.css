@@ -1,0 +1,7 @@
+@layer responsive {
+@media(max-width: 768px) {
+  .sk-cta-section {
+    padding: 4rem 0;
+  }
+}
+}

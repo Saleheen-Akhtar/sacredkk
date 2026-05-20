@@ -153,4 +153,4 @@ $bg_texture = get_option('options_sk_offerings_bg_texture', '');
   </div>
 </div>
 
-<script type="application/json" id="sk-offerings-data"><?php echo wp_json_encode(array_values($offerings_data)); ?></script>
+<script type="application/json" id="sk-offerings-data"><?php echo wp_json_encode(array_values($offerings_data), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?></script>

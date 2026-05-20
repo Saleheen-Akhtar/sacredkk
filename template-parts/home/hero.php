@@ -47,7 +47,7 @@ $transform_pairs = (!empty($pairs_opt)) ? $pairs_opt : [
 
 </section>
 
-<script type="application/json" id="sk-hero-data"><?php echo wp_json_encode(['pairs' => array_values($transform_pairs)]); ?></script>
+<script type="application/json" id="sk-hero-data"><?php echo wp_json_encode(['pairs' => array_values($transform_pairs)], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?></script>
 
 <?php /* ══ SACRED DIVIDER — removed per v7 fix ══
        Hero divider/lotus/mist removed — clean transition via CSS.

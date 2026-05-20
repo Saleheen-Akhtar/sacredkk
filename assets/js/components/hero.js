@@ -16,8 +16,8 @@
     }
 
     const blur = motion.blur || '18px';
-    const charDuration = motion.reduced ? 0 : (motion.duration?.charStep || 90);
-    const charStagger = motion.reduced ? 0 : (motion.stagger?.char || 42);
+    const charDuration = motion.reduced ? 0 : motion.duration?.charStep;
+    const charStagger = motion.reduced ? 0 : motion.stagger?.char;
     let pairIndex = 0;
     let timer = 0;
 

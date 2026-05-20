@@ -1,0 +1,7 @@
+@layer responsive {
+@media(max-width: 600px) {
+  .sk-newsletter-card {
+    padding: 3rem 1.5rem;
+  }
+}
+}

@@ -8,7 +8,7 @@
 .sk-foot-wordmark{font-family:var(--font-display);font-size:clamp(3.2rem,8vw,7rem);font-weight:700;line-height:.9;letter-spacing:-.03em;color:rgba(255,255,255,.9)}
 .sk-foot-wordmark em{font-style:italic;color:var(--blush)}
 .sk-foot-cta{border-color:rgba(255,255,255,.22);color:rgba(255,255,255,.7);flex-shrink:0;align-self:center;font-size:.62rem;padding:.75rem 1.6rem}
-.sk-foot-cta:hover{border-color:rgba(255,255,255,.6);color:#fff;background:rgba(255,255,255,.06)}
+.sk-foot-cta:hover{border-color:rgba(255,255,255,.6);color:var(--color-white);background:rgba(255,255,255,.06)}
 .sk-foot-tagline{font-family:var(--font-display);font-size:1rem;font-weight:300;line-height:1.75;color:rgba(255,255,255,.52);max-width:480px}
 
 /* Grid layout with horizontal borders */
