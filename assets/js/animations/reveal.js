@@ -67,7 +67,7 @@
     }
     };
 
-    if (document.readyState === 'complete') initReveal();
-    else window.addEventListener('load', initReveal);
+    initReveal();
+
   });
 })();

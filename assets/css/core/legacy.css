@@ -18,21 +18,6 @@ Description: Luxury spiritual wellness. ACF + CPT. Fully free stack. Zero paid p
 /* ==========================================================================
    1. CORE & TOKENS LEGACY
    ========================================================================== */
-/* ── PROGRESS BAR ────────────────────────────────────────── */
-.sk-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--terra),var(--blush));z-index:1000;width:0%;transition:width .08s linear;pointer-events:none}
-
-/* ── BODY ────────────────────────────────────────────────── */
-body{background:var(--ivory);color:var(--ink);font-family:var(--font-ui);font-weight:300;line-height:1.75;overflow-x:hidden;min-height:100%;-webkit-font-smoothing:antialiased;padding-bottom:100px}
-/* Grain texture: position:fixed + will-change:transform promotes to own GPU layer,
-   preventing repaint on every scroll frame. contain:strict isolates layout/paint. */
-body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.022;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;will-change:transform;contain:strict;transform:translateZ(0)}
-
-/* ── LAYOUT ──────────────────────────────────────────────── */
-.wrap       {max-width:var(--sk-content-max);margin:0 auto;padding:0 3rem}
-.wrap-narrow{max-width:800px;margin:0 auto;padding:0 3rem}
-.wrap-wide  {max-width:1560px;margin:0 auto;padding:0 3rem}
-
-/* ── REVEAL / ANIMATION ──────────────────────────────────── */
 /* ── GSAP-OWNED REVEAL CLASSES ───────────────────────────────
    CSS only sets the initial hidden state; transitions are
    intentionally removed — GSAP / ScrollTrigger drives all
@@ -49,9 +34,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 
 /* Sections that need a top gradient bleed into the previous bg */
 .strip--circular::before,
-.offerings-section::after,
 .founders-section::after,
-.faq-section::after {
   content: '';
   position: absolute;
   left: 0; right: 0;
@@ -68,7 +51,6 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 }
 
 /* Gentle ambient glow at top of ivory-warm sections */
-.offerings-section::after {
   top: 0;
   background: linear-gradient(to bottom, var(--ivory) 0%, transparent 100%);
 }
@@ -76,7 +58,6 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 /* Section floating shadow — creates depth separation between sections */
 .about-section,
 .founders-section,
-.faq-section,
 .sk-journal-preview-section,
 .sk-home-posts-section {
   position: relative;
@@ -3694,14 +3675,11 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
   }
 
   /* ── Cards: subtle lift ── */
-  .offering-card,
   .value-card,
   .sk-post-card,
   .ct-card,
-  .founder-card {
     transition: transform 0.5s ease, box-shadow 0.5s ease !important;
   }
-  .offering-card:hover,
   .value-card:hover,
   .sk-post-card:hover,
   .ct-card:hover {
@@ -3730,17 +3708,14 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
   }
 
   /* ── Images: subtle zoom on hover ── */
-  .offering-img,
   .sk-post-card-img,
   .sk-client-story-img {
     overflow: hidden;
   }
-  .offering-img img,
   .sk-post-card-img img,
   .sk-client-story-img img {
     transition: transform 0.8s ease !important;
   }
-  .offering-card:hover .offering-img img,
   .sk-post-card:hover .sk-post-card-img img,
   .sk-client-story:hover .sk-client-story-img img {
     transform: scale(1.03) !important;
@@ -3815,10 +3790,8 @@ body {
 }
 /* Ensure sections stack correctly */
 .about-section ~ *,
-.offerings-section,
 .founders-section,
 .values-section,
-.faq-section,
 .cta-section,
 .sk-cta-section,
 .journal-preview-section,
@@ -3856,9 +3829,7 @@ body {
 /* Smooth section transitions — reduce jank on scroll */
 section,
 .about-section,
-.offerings-section,
 .founders-section,
-.faq-section,
 .cta-section,
 footer.footer {
   transform: translateZ(0);
@@ -4137,7 +4108,7 @@ footer.footer {
     opacity: 0 !important;
     display: none !important;
     pointer-events: none !important;
-    transform: none !important;
+    transform: none !important; background-image: var(--about-bg, none);
   }
   .sk-fts-panel.is-active {
     display: block !important;
@@ -4262,12 +4233,12 @@ footer.footer {
 
 .sk-stories-teaser {
   position: relative;
-  background-image: url('https://sacredkompass.org/wp-content/uploads/2026/05/Loust-background.png');
+  background-image: var(--about-bg, none);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed !important;
-  transform: none !important;
+  transform: none !important; background-image: var(--about-bg, none);
   will-change: auto !important;
   backface-visibility: visible !important;
 }
@@ -4920,7 +4891,7 @@ footer.footer {
 .sk-stories-preview-section {
   padding: 7rem 0;
   background: var(--ivory-warm);
-  background-image: url('https://sacredkompass.org/wp-content/uploads/2026/05/stories.jpeg');
+  background-image: var(--stories-bg, none);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

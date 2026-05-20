@@ -7,7 +7,7 @@
 .strip--circular > *{position:relative;z-index:1}
 .circular-testimonials{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:56rem;margin:0 auto;padding:2rem}
 .ct-images{position:relative;width:100%;height:24rem;perspective:1000px}
-.ct-img{position:absolute;width:100%;height:100%;object-fit:cover;border-radius:1.5rem;box-shadow:0 10px 30px rgba(0,0,0,.2);cursor:pointer;transition:transform .65s cubic-bezier(.25,.46,.45,.94),opacity .45s cubic-bezier(.25,.46,.45,.94),box-shadow .45s ease !important}
+.ct-img{position:absolute;width:100%;height:100%;object-fit:cover;border-radius:1.5rem;box-shadow:0 10px 30px rgba(0,0,0,.2);cursor:pointer; }
 .ct-content{display:flex;flex-direction:column;justify-content:flex-start;min-height:24rem;height:24rem;position:relative}
 .ct-text{transition:opacity .3s ease,transform .3s ease;flex:1;overflow:hidden;display:flex;flex-direction:column}
 .ct-name{font-family:var(--font-display);font-size:clamp(1.3rem,2.5vw,1.75rem);font-weight:300;color:var(--ink);margin-bottom:.3rem;letter-spacing:.01em}
@@ -36,4 +36,32 @@
 }
 @media(max-width:480px){
   .ct-images{height:14rem}
+}
+/* State classes for philosophy-strip images */
+.ct-img {
+  transition: transform .65s cubic-bezier(.25,.46,.45,.94), opacity .45s cubic-bezier(.25,.46,.45,.94), box-shadow .45s ease !important;
+}
+.ct-img--active {
+  z-index: 3;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0) translateY(0) scale(1) rotateY(0deg);
+}
+.ct-img--left {
+  z-index: 2;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(calc(-1 * var(--ct-gap, 0px))) translateY(calc(-0.8 * var(--ct-gap, 0px))) scale(.85) rotateY(15deg);
+}
+.ct-img--right {
+  z-index: 2;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(var(--ct-gap, 0px)) translateY(calc(-0.8 * var(--ct-gap, 0px))) scale(.85) rotateY(-15deg);
+}
+.ct-img--hidden {
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(0) translateY(0) scale(1) rotateY(0deg);
 }

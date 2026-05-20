@@ -84,7 +84,7 @@ wp_reset_postdata();
   id="stories-preview"
   aria-labelledby="sp-heading"
   <?php if ( $sp_bg_image ) : ?>
-  style="--sp-bg: url('<?php echo esc_url( $sp_bg_image ); ?>')"
+  style="--stories-bg: url('<?php echo esc_url( $sp_bg_image ); ?>'); --sp-bg: url('<?php echo esc_url( $sp_bg_image ); ?>');"
   <?php endif; ?>
 >
   <div class="sk-sp-bg-overlay" aria-hidden="true"></div>

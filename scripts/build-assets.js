@@ -1,10 +1,13 @@
 const fs = require('fs');
 const path = require('path');
+const CleanCSS = require('clean-css');
+const Terser = require('terser');
 
 const root = path.resolve(__dirname, '..');
 const cssFiles = [
   'assets/css/core/theme.css',
   'assets/css/core/reset.css',
+  'assets/css/core/layout.css',
   'assets/css/core/typography.css',
   'assets/css/core/buttons.css',
   'assets/css/sections/about.css',
@@ -43,7 +46,6 @@ const appFiles = [
   'assets/js/components/contact.js',
   'assets/js/components/share.js',
   'assets/js/components/collective-cards.js',
-  'assets/js/components/founders-slider.js',
   'assets/js/components/hero.js',
   'assets/js/components/offerings-modal.js',
   'assets/js/components/philosophy-strip.js',
@@ -52,7 +54,12 @@ const appFiles = [
 ];
 
 function read(relativePath) {
-  return fs.readFileSync(path.join(root, relativePath), 'utf8');
+  try {
+    return fs.readFileSync(path.join(root, relativePath), 'utf8');
+  } catch (err) {
+    console.warn(`[WARN] Skipping ${relativePath} - not found`);
+    return '';
+  }
 }
 
 function write(relativePath, content) {
@@ -62,28 +69,23 @@ function write(relativePath, content) {
 }
 
 function minifyCss(content) {
-  return content
-    .replace(/\r\n/g, '\n')
-    .replace(/\/\*[\s\S]*?\*\//g, '')
-    .replace(/\s+/g, ' ')
-    .replace(/\s*([{}:;,>])\s*/g, '$1')
-    .replace(/;}/g, '}')
-    .trim();
+  return new CleanCSS({ level: 2 }).minify(content).styles;
 }
 
-function compactJs(content) {
-  return content
-    .replace(/\r\n/g, '\n')
-    .split('\n')
-    .map((line) => line.trim())
-    .filter(Boolean)
-    .join('\n');
+async function compactJs(content) {
+  const result = await Terser.minify(content, { format: { comments: false } });
+  return result.code;
 }
 
-const cssBundle = minifyCss(cssFiles.map(read).join('\n'));
-const vendorBundle = vendorFiles.map(read).join('\n');
-const appBundle = compactJs(appFiles.map(read).join('\n'));
+async function build() {
+  const cssBundle = minifyCss(cssFiles.map(read).join('\n'));
+  const vendorBundle = vendorFiles.map(read).join('\n');
+  const appBundle = await compactJs(appFiles.map(read).join('\n'));
 
-write('assets/dist/app.min.css', cssBundle);
-write('assets/dist/vendor.min.js', vendorBundle);
-write('assets/dist/app.min.js', appBundle);
+  write('assets/dist/app.min.css', cssBundle);
+  write('assets/dist/vendor.min.js', vendorBundle);
+  write('assets/dist/app.min.js', appBundle);
+  console.log('[INFO] Build complete.');
+}
+
+build().catch(console.error);
