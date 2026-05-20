@@ -1,0 +1,205 @@
+/* ==========================================================================
+   HERO: PRIMARY OWNER
+   ========================================================================== */
+@layer components {
+
+.hero,
+.sk-home-hero {
+  position: relative;
+}
+
+/* Home nav over hero */
+.home .nav:not(.scrolled) {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.home .nav:not(.scrolled) .nav-links a,
+.home .nav:not(.scrolled) .nav-logo,
+.home .nav:not(.scrolled) .nav-logo-img {
+  color: rgba(255,255,255,.9);
+}
+
+.home .nav:not(.scrolled) .nav-links a::after {
+  background: #fff;
+}
+
+.home .nav:not(.scrolled) .nav-hamburger span {
+  background: #fff;
+}
+
+.home .nav:not(.scrolled) .btn-primary {
+  background: var(--terra);
+  color: #fff;
+}
+
+/* Current cinematic hero */
+.hero--split,
+.hero--fullscreen {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vw;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--ink);
+}
+
+.hero--split::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 12rem;
+  background: linear-gradient(to bottom, transparent 0%, rgba(26,22,18,.18) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero--split::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(ellipse 60% 40% at 15% 80%, rgba(196,144,42,.08) 0%, transparent 60%),
+              radial-gradient(ellipse 40% 60% at 85% 20%, rgba(228,189,160,.06) 0%, transparent 55%);
+}
+
+.hero-bg-layer { position: absolute; inset: 0; z-index: 0; }
+.hero-bg-image { position: absolute; inset: 0; }
+.hero-bg-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; will-change: transform; }
+.hero-bg-gradient { position: absolute; inset: 0; display: none !important; }
+.hero-bg-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(10,8,12,.75) 0%, rgba(10,8,12,.55) 55%, rgba(10,8,12,.35) 100%); }
+.hero--fullscreen .hero-nav-hide { display: none; }
+
+.hero-from-wrap {
+  position: absolute;
+  top: 35%;
+  left: 18vw;
+  z-index: 4;
+  line-height: 1;
+  transform: translateY(-100%);
+}
+
+.hero-to-wrap {
+  position: absolute;
+  top: 42%;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  text-align: center;
+  line-height: 1;
+  pointer-events: none;
+  transform: none;
+}
+
+.hero--split .hero-right,
+.hero--split .hero-left {
+  display: none;
+}
+
+.hero-rule,
+.hero-features-strip {
+  display: none !important;
+}
+
+.hero--split .hero-left .stage-chaos { color: rgba(255,255,255,.55); }
+.hero--split .hero-left .stage-turning { color: rgba(255,255,255,.82); }
+.hero--split .hero-left .stage-calm { color: #fff; }
+.hero--split .hero-left .stage-calm em { font-style: italic; color: var(--blush); }
+.hero--split .hero-left .hero-sub { color: rgba(255,255,255,.72); max-width: 560px; }
+.hero--split .hero-left .hero-location { color: rgba(255,255,255,.42); }
+.hero--split .hero-left .hero-location::before { background: rgba(212,175,106,.5); }
+
+.hero-journey { display: flex; flex-direction: column; gap: 0; margin-bottom: 3.5rem; }
+.journey-stage { opacity: 0; transform: translateY(16px); }
+.journey-stage.visible { animation: stage-appear 1.1s var(--ease-soft) forwards; }
+@keyframes stage-appear { to { opacity: 1; transform: none; } }
+.stage-chaos { font-family: var(--font-display); font-size: clamp(1rem,1.8vw,1.25rem); font-weight: 400; font-style: italic; letter-spacing: .04em; padding-bottom: 1.4rem; animation-delay: .1s; }
+.stage-turning { font-family: var(--font-display); font-size: clamp(2rem,4vw,3.5rem); font-weight: 600; line-height: 1.08; letter-spacing: -.01em; padding-bottom: 1.2rem; animation-delay: .3s; }
+.stage-calm { font-family: var(--font-display); font-size: clamp(2.8rem,5.5vw,5.2rem); font-weight: 800; line-height: .95; letter-spacing: -.02em; padding-bottom: 1.8rem; animation-delay: .52s; }
+.hero-sub { font-family: var(--font-display); font-size: 1.1rem; font-weight: 300; line-height: 1.85; margin-bottom: 2rem; opacity: 0; animation: stage-appear .9s var(--ease-soft) .72s forwards; }
+.hero-actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.2rem; opacity: 0; animation: stage-appear .85s var(--ease-soft) .88s forwards; }
+.hero-location { margin-top: 2rem; font-family: var(--font-ui); font-size: .62rem; letter-spacing: .22em; text-transform: uppercase; display: flex; justify-content: center; align-items: center; gap: 1rem; opacity: 0; animation: stage-appear .75s var(--ease-soft) 1.05s forwards; }
+.hero-location::before { content: ''; width: 24px; height: 1px; display: block; opacity: .6; }
+
+/* Hero word cycle */
+.hcw-from {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5.5vw, 8rem);
+  font-weight: 400;
+  font-style: normal;
+  color: rgba(228, 168, 95, 0.85);
+  text-shadow: 0 0 40px rgba(228, 140, 60, 0.3);
+  white-space: normal;
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  opacity: 0;
+}
+
+.hcw-to {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 13vw, 13rem);
+  font-weight: 800;
+  font-style: italic;
+  color: #fff;
+  text-shadow: 0 2px 40px rgba(0,0,0,.2);
+  white-space: nowrap;
+  line-height: 1;
+  letter-spacing: -.03em;
+  text-align: center;
+  opacity: 1;
+  overflow: visible;
+}
+
+.hcw-to .char {
+  display: inline-block;
+  will-change: transform, filter, opacity;
+}
+
+.hcw { display: none; }
+
+.hero-cycle-rule {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(228,189,160,.45), transparent);
+  margin: 1.1rem auto;
+  width: 80px;
+}
+
+/* Legacy home hero variant */
+.sk-home-hero {
+  background: var(--ivory);
+  padding: 8rem 0 5rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.sk-home-hero-inner { position: relative; z-index: 2; }
+.sk-home-hero .display-xl { margin: 1rem 0 1.4rem; }
+.sk-home-hero-sub { max-width: 560px; margin: 0 auto; }
+.sk-home-hero-ornament {
+  position: absolute;
+  bottom: -2rem;
+  right: -2rem;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 14vw, 14rem);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--gold-glow);
+  line-height: 1;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  letter-spacing: -.03em;
+  z-index: 1;
+}
+
+} /* End of @layer components */

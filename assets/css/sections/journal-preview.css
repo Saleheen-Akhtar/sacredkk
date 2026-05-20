@@ -1,0 +1,489 @@
+/* ══════════════════════════════════════════════════════════
+   JOURNAL PREVIEW — Editorial Magazine Layout v3
+   ══════════════════════════════════════════════════════════ */
+
+.sk-journal-preview-section {
+  /* Footer-adjacent position: reduced top breathing room,
+     ivory-warm bg signals a gentle section change from the dark CTA above */
+  padding: 4rem 0 5rem;
+  background: var(--ivory-warm);
+  border-top: 1px solid var(--border-light);
+}
+
+/* Masthead title — now uses global .display-h2; this rule kept for layout context */
+.sk-jp-masthead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2.8rem;
+  flex-wrap: wrap;
+}
+/* Read-time badge on featured card overlay */
+.sk-jp-feat-readtime {
+  font-family: var(--font-ui);
+  font-size: 0.63rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  background: rgba(26,22,18,0.35);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+.sk-jp-see-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--terra);
+  text-decoration: none;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--r-btn);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s, gap 0.2s;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(184,98,63,0.28);
+  align-self: flex-end;
+}
+.sk-jp-see-all:hover {
+  background: var(--terra-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(184,98,63,0.38);
+  gap: 0.7rem;
+  color: #fff;
+}
+.sk-jp-see-all svg { flex-shrink: 0; }
+
+/* ── Editorial grid: 2 cols, featured left, stack right ── */
+.sk-jp-editorial-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* ── Featured large card ── */
+.sk-jp-featured {
+  position: relative;
+  border-radius: var(--r-card);
+  overflow: hidden;
+}
+.sk-jp-featured-link {
+  display: block;
+  position: relative;
+  height: 100%;
+  min-height: 320px;
+  max-height: 420px;
+  text-decoration: none;
+}
+.sk-jp-featured-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease);
+}
+.sk-jp-featured-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--parchment);
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: var(--gold);
+  opacity: 0.5;
+}
+.sk-jp-featured:hover .sk-jp-featured-img { transform: scale(1.04); }
+
+/* Gradient overlay */
+.sk-jp-feat-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.4rem 1.6rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(26,22,18,0.18) 0%,
+    transparent 35%,
+    transparent 55%,
+    rgba(26,22,18,0.72) 100%
+  );
+  pointer-events: none;
+}
+.sk-jp-feat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sk-jp-feat-date {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+}
+.sk-jp-feat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: rgba(251,250,246,0.92);
+  border-radius: var(--r-pill);
+  padding: 0.3rem 0.85rem 0.3rem 0.65rem;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.sk-jp-badge-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+.sk-jp-feat-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.sk-jp-feat-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.2vw, 1.75rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.25;
+  color: #fff;
+  margin: 0;
+  flex: 1;
+  text-shadow: 0 1px 12px rgba(26,22,18,0.35);
+}
+.sk-jp-feat-arrow {
+  flex-shrink: 0;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background: rgba(251,250,246,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background 0.2s, transform 0.2s;
+  pointer-events: auto;
+}
+.sk-jp-featured:hover .sk-jp-feat-arrow {
+  background: var(--terra);
+  color: #fff;
+  transform: rotate(45deg);
+}
+
+/* Keyboard focus — same visual feedback as hover (Fix: aria UX) */
+.sk-jp-featured-link:focus-visible .sk-jp-feat-arrow {
+  background: var(--terra);
+  color: #fff;
+  transform: rotate(45deg);
+  outline: 2px solid var(--terra);
+  outline-offset: 3px;
+}
+
+/* ── Side stack ── */
+.sk-jp-side-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+}
+.sk-jp-side-card {
+  background: var(--ivory);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  flex: 1;
+}
+/* Full-card link overlay */
+.sk-jp-side-card-link {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+.sk-jp-side-card:hover {
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-3px);
+}
+.sk-jp-side-img-wrap {
+  flex-shrink: 0;
+  width: 38%;
+  overflow: hidden;
+  background: var(--parchment);
+}
+.sk-jp-side-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease);
+}
+.sk-jp-side-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--gold);
+  opacity: 0.5;
+}
+.sk-jp-side-body {
+  padding: 1.3rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.sk-jp-side-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+.sk-jp-side-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--parchment);
+  border-radius: var(--r-pill);
+  padding: 0.22rem 0.7rem 0.22rem 0.55rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.sk-jp-side-badge:hover { background: var(--gold-pale); color: var(--gold); }
+.sk-jp-side-date {
+  font-family: var(--font-ui);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-ghost);
+}
+.sk-jp-side-title {
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--ink);
+  margin: 0 0 0.55rem;
+  flex: 1;
+  transition: color 0.2s;
+}
+.sk-jp-side-card-link:hover .sk-jp-side-title { color: var(--gold); }
+.sk-jp-side-card-link:hover .sk-jp-side-img { transform: scale(1.05); }
+.sk-jp-side-excerpt {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem; /* ~13px — legible at small viewport widths */
+  line-height: 1.65;
+  color: var(--ink-muted);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* minimum 2 lines so cards communicate value before a click */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+/* .sk-jp-side-arrow removed — title link is the sole CTA (single tab stop per card) */
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .sk-jp-editorial-grid { grid-template-columns: 1fr; }
+  .sk-jp-featured-link  { min-height: 260px; max-height: 340px; }
+  .sk-jp-side-stack     { flex-direction: row; }
+  .sk-jp-side-card      { flex-direction: column; }
+  .sk-jp-side-img-wrap  { width: 100%; height: 180px; }
+}
+@media (max-width: 640px) {
+  .sk-journal-preview-section { padding: 5rem 0; }
+  .sk-jp-side-stack { flex-direction: column; }
+  .sk-jp-side-img-wrap { height: 160px; }
+  .sk-jp-masthead { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   JOURNAL PREVIEW — Layout & scroll animations v2
+   ══════════════════════════════════════════════════════════ */
+
+/* Single-card centered layout */
+.sk-jp-grid--single {
+  display: flex;
+  justify-content: center;
+}
+.sk-jp-grid--single .sk-jp-card {
+  max-width: 480px;
+  width: 100%;
+}
+
+/* Two-card layout handled in overrides below */
+.sk-jp-grid--two-legacy-removed {
+  max-width: 860px;
+}
+
+/* Sub text under heading */
+.sk-jp-sub {
+  max-width: 42ch;
+  margin-top: 1rem;
+  color: var(--ink-muted);
+}
+
+/* ── Scroll-triggered slide-up animation ── */
+.sk-jp-header--reveal,
+.sk-jp-footer--reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(.22,.68,0,1.2), transform 0.65s cubic-bezier(.22,.68,0,1.2);
+}
+.sk-jp-header--visible,
+.sk-jp-footer--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cards start hidden */
+.sk-jp-card--animated {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.22,.68,0,1.2),
+              transform 0.7s cubic-bezier(.22,.68,0,1.2),
+              box-shadow .3s ease;
+}
+.sk-jp-card--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Keep hover effect working after reveal */
+.sk-jp-card--visible:hover {
+  box-shadow: var(--shadow-card-hover, 0 12px 40px rgba(26,22,18,.12));
+  transform: translateY(-4px);
+}
+
+/* ── Parallax feel: slightly different translate per card index ── */
+.sk-jp-card--animated:nth-child(2) {
+  transform: translateY(52px);
+}
+.sk-jp-card--animated:nth-child(3) {
+  transform: translateY(64px);
+}
+.sk-jp-card--animated:nth-child(2).sk-jp-card--visible,
+.sk-jp-card--animated:nth-child(3).sk-jp-card--visible {
+  transform: translateY(0);
+}
+.sk-jp-card--animated:nth-child(2).sk-jp-card--visible:hover,
+.sk-jp-card--animated:nth-child(3).sk-jp-card--visible:hover {
+  transform: translateY(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sk-jp-card--animated,
+  .sk-jp-header--reveal,
+  .sk-jp-footer--reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   JOURNAL PREVIEW — Fix 2-post layout to fill full width
+   Big featured left · two stacked cards right · equal height
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* Remove old restrictive max-width */
+.sk-jp-grid--two {
+  grid-template-columns: 3fr 2fr;
+  max-width: 100%;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* Featured card must fill full height of the row */
+.sk-jp-grid--two .sk-jp-featured {
+  height: 100%;
+}
+.sk-jp-grid--two .sk-jp-featured .sk-jp-featured-link {
+  min-height: 520px;
+  max-height: 100%;
+  height: 100%;
+}
+
+/* Side stack fills height and splits evenly */
+.sk-jp-grid--two .sk-jp-side-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+}
+.sk-jp-grid--two .sk-jp-side-card {
+  flex: 1;
+  /* Make side cards vertical (image top, text bottom) like a magazine tile */
+  flex-direction: column;
+}
+.sk-jp-grid--two .sk-jp-side-card .sk-jp-side-card-link {
+  flex-direction: column;
+  height: 100%;
+}
+.sk-jp-grid--two .sk-jp-side-img-wrap {
+  width: 100%;
+  height: 180px;
+  flex-shrink: 0;
+}
+
+/* Ensure section has generous padding */
+.sk-journal-preview-section {
+  padding: 6rem 0 7rem;
+}
+
+@media (max-width: 900px) {
+  .sk-jp-grid--two {
+    grid-template-columns: 1fr;
+  }
+  .sk-jp-grid--two .sk-jp-featured .sk-jp-featured-link {
+    min-height: 340px;
+    height: 340px;
+  }
+  .sk-jp-grid--two .sk-jp-side-card {
+    flex-direction: row;
+  }
+  .sk-jp-grid--two .sk-jp-side-card .sk-jp-side-card-link {
+    flex-direction: row;
+  }
+  .sk-jp-grid--two .sk-jp-side-img-wrap {
+    width: 38%;
+    height: auto;
+  }
+}

@@ -1,0 +1,80 @@
+/* 1. Define Global Cascade Layers (Lowest to Highest Priority) */
+@layer legacy, tokens, base, layout, components, utilities, responsive, motion;
+
+@layer tokens {
+  :root {
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+
+  /* Colors */
+  --ivory:          #FBFAF6;
+  --ivory-warm:     #F6F0E7;
+  --parchment:      #EDE3D2;
+  --parchment-deep: #E3D5C0;
+  --border:         #E0D5C4;
+  --border-light:   #EDE5D8;
+  --terra:          #B8623F;
+  --terra-dark:     #9A4D2E;
+  --terra-soft:     rgba(184,98,63,.10);
+  --blush:          #E4BDA0;
+  --sage:           #7A9579;
+  --gold:           #C4902A;
+  --gold-light:     #D4AF6A;
+  --gold-pale:      rgba(212,175,106,.12);
+  --gold-glow:      rgba(196,144,42,.07);
+  --ink:            #1A1612;
+  --ink-mid:        #3A332C;
+  --ink-muted:      #78695A;
+  --ink-ghost:      #A8998A;
+  --footer-bg:      #130F0C;
+  --celestial:      #FDFBF5;
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond','Times New Roman',serif;
+  --font-alt:     'Cormorant',serif;
+  --font-ui:      'Jost',system-ui,sans-serif;
+  --font-body:    var(--font-ui);
+  --font-serif:   var(--font-display);
+
+  /* radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --r-card:      18px;
+  --r-pill:      100px;
+  --r-btn:       8px;
+
+  /* motion */
+  --ease:        cubic-bezier(.25,.46,.45,.94);
+  --ease-spring: cubic-bezier(.34,1.56,.64,1);
+  --ease-soft:   cubic-bezier(.22,1,.36,1);
+  --ease-standard: cubic-bezier(.22,.61,.36,1);
+
+  /* z-index */
+  --z-nav: 100;
+  --z-overlay: 200;
+
+  /* Layout */
+  --sk-content-max: 1360px;
+  --sk-content-narrow: 860px;
+  --sk-section-padding: clamp(4.5rem, 8vw, 7rem);
+  --section-py:   var(--sk-section-padding);
+  --sp-bg:        none;
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px rgba(26,22,18,.07), 0 1px 4px rgba(26,22,18,.04);
+  --shadow-lift: 0 12px 40px rgba(26,22,18,.11), 0 2px 8px rgba(26,22,18,.05);
+}
+}
+
+@layer base {
+html.sk-js-ready {
+  scroll-behavior: auto;
+}
+
+body.sk-scroll-locked {
+  overflow: hidden;
+}
+}

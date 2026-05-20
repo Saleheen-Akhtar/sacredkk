@@ -1,0 +1,475 @@
+/* ═══════════════════════════════════════════════════════════
+   OFFERINGS SECTION — Retro Carousel v10.0
+   Horizontal scrolling carousel of parchment cards.
+   Click to expand → full-screen detail modal.
+   Arrow navigation + drag/swipe on touch.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── RETRO CAROUSEL SECTION ─────────────────────────────── */
+
+.sk-rc-section {
+  padding: var(--section-py) 0;
+  background: var(--ivory-warm);
+  overflow: hidden;
+}
+
+/* Header */
+.sk-rc-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+.sk-rc-header .display-h2 {
+  margin-top: .6rem;
+}
+.sk-rc-header .body-serif {
+  margin-top: .8rem;
+}
+
+/* Carousel outer wrapper */
+.sk-rc-carousel-outer {
+  position: relative;
+}
+
+/* Scrollable track — horizontal, no scrollbar */
+.sk-rc-track {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  overflow-x: scroll;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 2.5rem 4rem 2.5rem;
+  justify-content: flex-start;
+  cursor: grab;
+  scroll-snap-type: none;
+  touch-action: pan-x pan-y; /* allow both axes so browser doesn't eat vertical scroll */
+}
+.sk-rc-track.is-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.sk-rc-track::-webkit-scrollbar {
+  display: none;
+}
+.sk-rc-track:active {
+  cursor: grabbing;
+}
+
+/* Card wrap — always visible for infinite clone loop */
+.sk-rc-card-wrap {
+  flex: 0 0 auto;
+  opacity: 1;
+  transform: none;
+}
+.sk-rc-card-wrap.sk-rc-card-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* The card itself — matches retro-testimonial card */
+.sk-rc-card {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  /* Parchment gradient — from-[#f2f0eb] to-[#fff9eb] */
+  background: linear-gradient(to bottom, var(--ivory-warm), #fffbf0);
+  border-radius: 24px;
+  width: 320px;
+  height: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 4px 16px rgba(26,22,18,.08),
+    0 12px 40px rgba(26,22,18,.10);
+  /* Smooth 3D tilt transition - transform managed by GSAP/JS mousemove */
+  transition:
+    box-shadow .4s var(--ease-soft);
+  will-change: transform;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+/* Background texture — 30% opacity image layer */
+.sk-rc-card-texture {
+  position: absolute;
+  inset: 0;
+  opacity: .22;
+  pointer-events: none;
+}
+.sk-rc-card-texture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+}
+
+/* Avatar / number circle */
+.sk-rc-card-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid rgba(59,59,59,.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(237,227,210,.55);
+  margin-bottom: 1.2rem;
+  position: relative;
+  z-index: 1;
+  /* Desaturated sepia — matches component */
+  filter: saturate(.25) sepia(.4);
+  transition: filter .35s var(--ease), transform .35s var(--ease-spring);
+}
+.sk-rc-card:hover .sk-rc-card-avatar {
+  filter: saturate(.5) sepia(.2);
+  transform: scale(1.06);
+}
+
+/* Card number */
+.sk-rc-card-num {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--terra);
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+}
+
+/* Short description */
+.sk-rc-card-desc {
+  font-family: var(--font-display);
+  font-size: 1.0rem;
+  font-weight: 300;
+  color: rgba(31,27,29,.68);
+  line-height: 1.65;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  margin-top: .2rem;
+  /* 4 lines max on card */
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Title */
+.sk-rc-card-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgba(31,27,29,.75);
+  text-align: center;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 1;
+  letter-spacing: .02em;
+}
+
+/* Tag / designation */
+.sk-rc-card-tag {
+  font-family: var(--font-display);
+  font-size: .85rem;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(31,27,29,.55);
+  text-align: center;
+  margin-top: .3rem;
+  position: relative;
+  z-index: 1;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1px;
+}
+
+/* Price badge */
+.sk-rc-card-price {
+  font-family: var(--font-display);
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  text-transform: none;
+  color: #fff;
+  text-align: center;
+  margin-top: 1.2rem;
+  position: relative;
+  z-index: 1;
+  padding: .5rem 1.25rem;
+  background: var(--terra);
+  border: none;
+  border-radius: var(--r-pill);
+  display: inline-block;
+  align-self: center;
+  box-shadow: 0 4px 16px rgba(184,98,63,.45);
+}
+
+/* ── Expanded Overlay (AnimatePresence equivalent) ─────── */
+.sk-rc-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow-y: auto;
+  /* Pre-animation state */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s var(--ease-soft);
+}
+.sk-rc-overlay.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Backdrop — click-to-close */
+.sk-rc-overlay-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(26,22,18,.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Modal content box */
+.sk-rc-overlay-box {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 800px;
+  background: var(--ivory-warm);
+  border-radius: 24px;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow:
+    0 8px 32px rgba(26,22,18,.18),
+    0 32px 80px rgba(26,22,18,.22);
+  transform: translateY(28px);
+  transition: transform .4s var(--ease-soft);
+}
+.sk-rc-overlay.is-open .sk-rc-overlay-box {
+  transform: translateY(0);
+}
+
+/* Scrollable content area only */
+#sk-rc-overlay-content {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+  padding: 0 3rem 0;
+  flex: 1;
+}
+#sk-rc-overlay-content::-webkit-scrollbar {
+  width: 4px;
+}
+#sk-rc-overlay-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+#sk-rc-overlay-content::-webkit-scrollbar-thumb {
+  background: rgba(196,144,42,.3);
+  border-radius: 2px;
+}
+
+/* Close button — absolute top-right of the box */
+.sk-rc-overlay-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  display: flex;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--ink-mid);
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: background .25s, transform .2s var(--ease-spring);
+  z-index: 10;
+  flex-shrink: 0;
+}
+.sk-rc-overlay-close:hover {
+  background: var(--terra);
+  transform: scale(1.1) rotate(90deg);
+}
+
+/* ── Modal header (non-scrolling) */
+.sk-rc-ol-header {
+  padding: 2.4rem 3rem 1.6rem;
+  border-bottom: 1px solid rgba(31,27,29,.07);
+  flex-shrink: 0;
+  background: linear-gradient(to bottom, var(--ivory-warm), rgba(242,240,235,.6));
+}
+
+/* Overlay content */
+.sk-rc-ol-tag {
+  font-family: var(--font-ui);
+  font-size: .58rem;
+  font-weight: 400;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: .5rem;
+}
+
+.sk-rc-ol-num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(196,144,42,.12);
+  line-height: .9;
+  margin-bottom: -.3rem;
+}
+
+.sk-rc-ol-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: -.01em;
+}
+
+.sk-rc-ol-quote-icon {
+  color: rgba(31,27,29,.3);
+  margin: .2rem 0 .4rem;
+  display: inline-block;
+}
+
+.sk-rc-ol-desc {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: rgba(31,27,29,.72);
+  line-height: 1.9;
+  padding: 1.2rem 0 1.6rem;
+}
+
+/* ── Action row — sticky at the bottom */
+.sk-rc-ol-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.4rem 3rem;
+  border-top: 1px solid rgba(31,27,29,.08);
+  background: var(--ivory-warm);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.sk-rc-ol-price-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+}
+
+.sk-rc-ol-price-label {
+  font-family: var(--font-ui);
+  font-size: .55rem;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(31,27,29,.35);
+}
+
+.sk-rc-ol-price {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  color: var(--terra);
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+}
+.sk-rc-ol-price::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--terra), var(--gold));
+  border-radius: 2px;
+  opacity: .5;
+}
+
+.sk-rc-ol-avail {
+  font-size: 12px;
+  color: var(--ink-muted);
+  display: block;
+  margin-top: 4px;
+}
+
+/* CTA button — action row */
+.sk-rc-ol-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Badges — service details (duration, format, capacity) */
+.sk-rc-ol-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.sk-rc-ol-badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(196,154,42,.12);
+  color: var(--gold);
+  border: 1px solid rgba(196,154,42,.25);
+  white-space: nowrap;
+}
+
+/* Stagger delays for card entrance animation */
+.sk-rc-card-wrap:nth-child(1) {
+  --card-delay: .05s;
+}
+.sk-rc-card-wrap:nth-child(2) {
+  --card-delay: .12s;
+}
+.sk-rc-card-wrap:nth-child(3) {
+  --card-delay: .19s;
+}
+.sk-rc-card-wrap:nth-child(4) {
+  --card-delay: .26s;
+}
+.sk-rc-card-wrap:nth-child(5) {
+  --card-delay: .33s;
+}
+
+/* Hover state for desktop */
+@media (hover: hover) and (pointer: fine) {
+  .sk-rc-card:hover {
+    box-shadow:
+      0 8px 24px rgba(26,22,18,.12),
+      0 24px 56px rgba(26,22,18,.16);
+  }
+}

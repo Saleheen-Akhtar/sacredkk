@@ -1,0 +1,945 @@
+/* Extracted from legacy.css: top nav shell. */
+
+/* ── NAV ─────────────────────────────────────────────────── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:8000;padding:1.2rem 3.5rem;display:flex;align-items:center;justify-content:space-between;background:rgba(253,251,245,0.82);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid rgba(224,213,196,0.45);box-shadow:0 1px 32px rgba(26,22,18,.06);transition:transform .45s var(--ease-soft),background .4s var(--ease),box-shadow .4s,padding .4s var(--ease);will-change:transform}
+.nav.scrolled{padding:.85rem 3.5rem;background:rgba(253,251,245,0.88);box-shadow:0 2px 40px rgba(26,22,18,.09)}
+.nav.nav--hidden{transform:translateY(-110%)}
+.nav.nav--top{transform:translateY(0) !important}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;font-family:var(--font-display);font-size:1.2rem;font-weight:400;letter-spacing:.08em;color:var(--ink);z-index:1}
+.nav-logo em{font-style:italic;color:var(--terra)}
+.nav-logo-img{display:block;height:56px;width:auto;max-width:220px;object-fit:contain}
+/* Logo text label beside the image */
+.nav-logo-name{font-family:var(--font-display);font-size:1.15rem;font-weight:400;letter-spacing:.08em;color:var(--ink);line-height:1;white-space:nowrap}
+.nav-logo-name em{font-style:italic;color:var(--terra)}
+.nav-links{display:flex;align-items:center;gap:2.8rem;list-style:none}
+.nav-links a{font-family:var(--font-ui);font-size:.78rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted);transition:color .25s;position:relative;padding-bottom:3px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;right:100%;height:1px;background:var(--terra);transition:right .3s var(--ease)}
+.nav-links a:hover,.nav-links a.active{color:var(--terra)}
+.nav-links a:hover::after,.nav-links a.active::after{right:0}
+.nav-cta .btn{padding:.65rem 1.5rem;font-size:.66rem}
+/* Fix: nav-links btn items must match the height of plain links */
+.nav-links .btn,.nav-links a.btn{padding-top:0;padding-bottom:3px;line-height:inherit;vertical-align:baseline}
+.nav-links .btn-ghost,.nav-links a.btn-ghost{padding-top:0;padding-bottom:3px}
+.nav-links .btn-ghost::after{bottom:0}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;width:36px;height:36px;cursor:pointer;padding:6px;z-index:8200;align-items:center;justify-content:center;border-radius:8px;transition:background .2s}
+.nav-hamburger:hover{background:rgba(26,22,18,.06)}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:transform .4s var(--ease),opacity .3s,width .3s;transform-origin:center;border-radius:2px}
+.nav-hamburger span:nth-child(2){width:16px}
+.nav-hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);width:22px}
+.nav-hamburger.open span:nth-child(2){opacity:0;width:22px}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);width:22px}
+.nav-mobile-overlay{position:fixed;inset:0;background:rgba(253,251,245,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:8150;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s var(--ease-soft),visibility .4s;visibility:hidden}
+.nav-mobile-overlay.open{opacity:1;pointer-events:all;visibility:visible}
+.nav-mobile-overlay ul{list-style:none;text-align:center;padding:0;margin:0}
+.nav-mobile-overlay li{opacity:0;transform:translateY(18px);transition:opacity .45s var(--ease-soft),transform .45s var(--ease-soft)}
+.nav-mobile-overlay.open li{opacity:1;transform:none}
+.nav-mobile-overlay.open li:nth-child(1){transition-delay:.08s}
+.nav-mobile-overlay.open li:nth-child(2){transition-delay:.14s}
+.nav-mobile-overlay.open li:nth-child(3){transition-delay:.20s}
+.nav-mobile-overlay.open li:nth-child(4){transition-delay:.26s}
+.nav-mobile-overlay.open li:nth-child(5){transition-delay:.32s}
+.nav-mobile-overlay a{font-family:var(--font-display);font-size:clamp(2rem,8vw,3.2rem);font-weight:300;color:var(--ink);display:block;padding:.5rem 2rem;letter-spacing:.02em;transition:color .25s,font-style .25s}
+.nav-mobile-overlay a:hover{color:var(--terra);font-style:italic}
+.nav-mobile-divider{width:1px;height:36px;background:var(--border);margin:1.2rem auto}
+.nav-mobile-cta{margin-top:.5rem;opacity:0;transform:translateY(18px);transition:opacity .45s var(--ease-soft) .38s,transform .45s var(--ease-soft) .38s;padding:0 2rem;width:100%;max-width:360px}
+.nav-mobile-overlay.open .nav-mobile-cta{opacity:1;transform:none}
+.nav-mobile-cta .btn{width:100%;justify-content:center;text-align:center;white-space:normal;padding:1rem 1.5rem;line-height:1.4}
+.nav-mobile-logo{padding:2.5rem 2.5rem 1rem;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:1.5rem}
+.nav-mobile-logo a{display:flex;align-items:center;text-decoration:none;font-family:var(--font-display);font-size:1.1rem;font-weight:300;color:rgba(255,255,255,.55)}
+.nav-mobile-logo a em{font-style:italic;color:var(--blush);margin-left:.2em}
+.nav-mobile-logo-img{height:36px;width:auto;object-fit:contain}
+.nav-mobile-close{position:absolute;top:1.5rem;right:1.8rem;background:var(--terra);border:none;cursor:pointer;padding:0;z-index:8200;display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;transition:background .22s var(--ease),transform .3s var(--ease-spring);box-shadow:0 2px 10px rgba(184,98,63,.28)}
+.nav-mobile-close:hover{background:var(--terra-dark);transform:rotate(90deg) scale(1.1);box-shadow:0 4px 16px rgba(184,98,63,.4)}
+.nav-mobile-close svg{stroke:#fff;transition:none}
+.nav-mobile-close:hover svg{stroke:#fff}
+
+body {
+  padding-left: 0;
+}
+
+.sk-sidenav {
+  position: fixed;
+  top: auto;
+  bottom: 1.4rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(90px);
+  z-index: 8000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  width: auto;
+  min-width: 260px;
+  max-width: calc(100vw - 3rem);
+  height: auto;
+  min-height: 60px;
+  max-height: none;
+  padding: 0.35rem 0.5rem;
+  overflow: visible;
+  border: 1px solid rgba(212, 175, 106, 0.3);
+  border-radius: 50px;
+  background: rgba(253, 251, 245, 0.97);
+  box-shadow: 0 4px 24px rgba(26, 22, 18, 0.12), 0 1px 4px rgba(212, 175, 106, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.34, 1.4, 0.64, 1), opacity 0.4s ease;
+}
+
+.sk-sidenav.sk-sidenav--visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.sk-sidenav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-right: 0.4rem;
+  margin-bottom: 0;
+  flex-shrink: 0;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.sk-sidenav-logo:hover {
+  transform: scale(1.08);
+}
+
+.sk-sidenav-logo-img {
+  display: block;
+  width: auto;
+  max-width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.sk-sidenav-logo-name {
+  display: none;
+}
+
+.sk-sidenav-logo-name em {
+  font-style: italic;
+  color: var(--terra);
+}
+
+.sk-sidenav-links {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  width: auto;
+  height: auto;
+  min-height: 48px;
+  margin: 0;
+  padding: 0.25rem 0;
+  list-style: none;
+  border-top: none;
+  border-bottom: none;
+  border-left: 1px solid rgba(212, 175, 106, 0.2);
+}
+
+.sk-sidenav-links li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 52px;
+  min-height: 40px;
+  height: auto;
+  flex: 1;
+}
+
+.sk-sidenav-links li::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  z-index: 100;
+  padding: 0.28em 0.65em;
+  border-radius: 4px;
+  background: var(--ink);
+  color: var(--ivory);
+  font-family: var(--font-ui);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-50%) translateY(4px);
+  transition: opacity 0.14s, transform 0.14s;
+}
+
+.sk-sidenav-links li:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.sk-sidenav-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 38px;
+  height: auto;
+  padding: 0.3rem 0.5rem;
+  border-radius: 50px;
+  color: var(--ink-muted);
+  font-family: var(--font-ui);
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: normal;
+  word-break: break-word;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  writing-mode: horizontal-tb;
+}
+
+.sk-sidenav-links a:hover,
+.sk-sidenav-links a.active {
+  color: var(--terra);
+  background: rgba(184, 98, 63, 0.25);
+  transform: scale(1.06);
+}
+
+.sk-sidenav-links a.active {
+  background: rgba(184, 98, 63, 0.13);
+  transform: none;
+}
+
+.sk-sidenav-cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: auto;
+  margin-top: 0;
+  margin-left: 0.4rem;
+  padding-top: 0;
+  padding-left: 0.5rem;
+  border-top: none;
+  border-left: 1px solid rgba(212, 175, 106, 0.2);
+}
+
+.sk-sidenav-cta .btn,
+.sk-sidenav-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  width: auto;
+  min-width: 0;
+  height: auto;
+  padding: 0.4rem 0.9rem;
+  border: none;
+  border-radius: 50px;
+  background: var(--terra);
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(184, 98, 63, 0.35);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.sk-sidenav-cta .btn:hover,
+.sk-sidenav-cta-btn:hover {
+  background: #9e4e29;
+  transform: scale(1.04);
+  box-shadow: 0 4px 14px rgba(184, 98, 63, 0.45);
+}
+
+.sk-sidenav-cta::after {
+  content: none;
+}
+
+.sk-hamburger {
+  display: none !important;
+}
+
+.sk-hamburger span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  border-radius: 2px;
+  background: var(--ink);
+  transform-origin: center;
+  transition: transform 0.35s ease, opacity 0.25s ease, width 0.25s ease;
+}
+
+.sk-sidenav-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 7900;
+  display: none;
+  opacity: 0;
+  background: rgba(26, 22, 18, 0.45);
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.sk-sidenav-backdrop.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav,
+.nav-mobile-overlay {
+  display: none !important;
+}
+
+.sk-nav-gold {
+  color: var(--gold) !important;
+}
+
+.sk-nav-icon {
+  font-style: normal;
+}
+
+@media (min-width: 901px) {
+  :root {
+    --sidenav-offset: 0px;
+  }
+
+  .sk-sidenav {
+    min-width: 480px;
+    bottom: 1.6rem;
+    padding: 0.35rem 1.2rem;
+  }
+
+  .sk-sidenav-links a {
+    min-height: 38px;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.5rem;
+    white-space: normal;
+  }
+
+  .sk-sidenav-logo {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+@media (max-width: 900px) {
+  body {
+    padding-left: 0;
+  }
+
+  :root {
+    --sidenav-offset: 0px;
+  }
+
+  .sk-sidenav-backdrop {
+    display: block;
+    pointer-events: none;
+  }
+
+  .sk-sidenav-backdrop.visible {
+    pointer-events: auto;
+  }
+
+  .sk-sidenav {
+    width: calc(100vw - 1.6rem);
+    max-width: calc(100vw - 1.6rem);
+    min-height: 62px;
+    max-height: none;
+    padding: 0.4rem 0.8rem;
+    opacity: 0;
+    transform: translateX(-50%) translateY(90px);
+    transition: transform 0.4s cubic-bezier(0.34, 1.3, 0.64, 1), opacity 0.35s ease;
+  }
+
+  .sk-sidenav.sk-sidenav--visible {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+
+  .sk-sidenav-logo {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    margin-right: 0.2rem;
+  }
+
+  .sk-sidenav-logo-name {
+    display: none;
+  }
+
+  .sk-sidenav-logo-img {
+    max-width: 28px;
+    height: 28px;
+  }
+
+  .sk-sidenav.open {
+    width: calc(100vw - 1.6rem);
+    max-width: calc(100vw - 1.6rem);
+    min-height: 62px;
+    max-height: none;
+    padding: 1rem 1.4rem 2rem;
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+    z-index: 8600;
+    overflow: auto;
+    gap: 0;
+  }
+
+  .sk-sidenav.open .sk-sidenav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: auto;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .sk-sidenav.open .sk-sidenav-logo-img {
+    max-width: 34px;
+    height: 34px;
+  }
+
+  .sk-sidenav.open .sk-sidenav-logo-name {
+    display: block;
+  }
+
+  .sk-sidenav.open .sk-sidenav-links {
+    width: 100%;
+    flex: unset;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 0.5rem;
+    border-left: none;
+  }
+
+  .sk-sidenav.open .sk-sidenav-links li {
+    width: 100%;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .sk-sidenav.open .sk-sidenav-links a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    padding: 0 0.6rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-decoration: none;
+  }
+
+  .sk-sidenav.open .sk-sidenav-cta {
+    width: 100%;
+    margin-top: 1.2rem;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .sk-sidenav.open .sk-sidenav-cta .btn {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    justify-content: center;
+  }
+
+  .sk-sidenav-links {
+    flex: 1;
+    border-left: none;
+  }
+
+  .sk-sidenav-links li::after {
+    display: none;
+  }
+
+  .sk-sidenav-links a {
+    height: 46px;
+    padding: 0 0.5rem;
+    font-size: 0.47rem;
+    letter-spacing: 0.07em;
+    text-decoration: none;
+  }
+
+  .sk-sidenav-cta {
+    margin-left: 0.4rem;
+    padding-left: 0.5rem;
+  }
+
+  .sk-sidenav-cta .btn,
+  .sk-sidenav-cta-btn {
+    width: auto;
+    height: auto;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.46rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sk-sidenav {
+    min-height: 54px;
+    max-height: none;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .sk-sidenav-links a {
+    min-height: 36px;
+    height: auto;
+    padding: 0.25rem 0.4rem;
+    font-size: 0.44rem;
+  }
+
+  .sk-sidenav-cta .btn,
+  .sk-sidenav-cta-btn {
+    padding: 0.3rem 0.55rem;
+    font-size: 0.42rem;
+  }
+}
+
+/* Extracted from legacy.css: late sidenav overrides. */
+
+/* ─────────────────────────────────────────────────────────────
+   1a. SIDENAV — DESKTOP TWEAKS (wider pill, more items visible)
+   ───────────────────────────────────────────────────────────── */
+@media (min-width: 901px) {
+  /* body padding-left is set in the main desktop nav block below */
+  :root { --sidenav-offset: 0px; }
+
+  .sk-sidenav {
+    min-width: 480px;
+    height: auto;
+    min-height: 60px;
+    max-height: none;
+    bottom: 1.6rem;
+    padding: 0.35rem 1.2rem;
+  }
+  .sk-sidenav-links a {
+    font-size: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    min-height: 38px;
+    height: auto;
+    white-space: normal;
+  }
+  .sk-sidenav-logo {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   1b. SIDENAV — MOBILE (≤900px) — narrower pill
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  body { padding-left: 0 !important; }
+  :root { --sidenav-offset: 0px !important; }
+
+  .sk-sidenav {
+    max-width: calc(100vw - 1.6rem) !important;
+    width: calc(100vw - 1.6rem) !important;
+    height: auto !important;
+    min-height: 62px !important;
+    max-height: none !important;
+    bottom: 1rem !important;
+    padding: 0.4rem 0.8rem !important;
+    transform: translateX(-50%) translateY(90px) !important;
+    opacity: 0 !important;
+    transition: transform 0.4s cubic-bezier(0.34,1.3,0.64,1), opacity 0.35s ease !important;
+  }
+  .sk-sidenav.sk-sidenav--visible {
+    transform: translateX(-50%) translateY(0) !important;
+    opacity: 1 !important;
+  }
+  /* Logo: show icon in pill, hide text name */
+  .sk-sidenav-logo { display: flex; width: 36px; height: 36px; margin-right: 0.2rem; }
+  .sk-sidenav-logo-name { display: none; }
+  .sk-sidenav-logo-img { height: 28px; max-width: 28px; }
+  .sk-sidenav.open .sk-sidenav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: auto;
+    height: auto;
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+  .sk-sidenav.open .sk-sidenav-logo-img { height: 34px; max-width: 34px; }
+  .sk-sidenav.open .sk-sidenav-logo-name { display: block; }
+
+  /* When open: become a full left-side drawer */
+  .sk-sidenav.open .sk-sidenav-links {
+    flex-direction: column !important;
+    border-left: none !important;
+    flex: unset !important;
+    width: 100% !important;
+    gap: 0 !important;
+    margin-top: 0.5rem !important;
+  }
+  .sk-sidenav.open .sk-sidenav-links li {
+    width: 100% !important;
+    border-bottom: 1px solid var(--border-light) !important;
+  }
+  .sk-sidenav.open .sk-sidenav-links li:first-child {
+    border-top: 1px solid var(--border-light) !important;
+  }
+  .sk-sidenav.open .sk-sidenav-links a {
+    height: 48px !important;
+    font-size: 0.65rem !important;
+    padding: 0 0.6rem !important;
+    letter-spacing: 0.12em !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  .sk-sidenav.open .sk-sidenav-cta {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    width: 100% !important;
+    margin-top: 1.2rem !important;
+  }
+  .sk-sidenav.open .sk-sidenav-cta .btn {
+    width: 100% !important;
+    height: auto !important;
+    padding: 0.9rem 1.2rem !important;
+    justify-content: center !important;
+  }
+
+  /* Pill state (not open) */
+  .sk-sidenav-links {
+    border-left: none;
+    flex: 1;
+  }
+  .sk-sidenav-links li::after { display: none; }
+  .sk-sidenav-links a {
+    height: 46px !important;
+    font-size: 0.47rem !important;
+    padding: 0 0.5rem !important;
+    letter-spacing: 0.07em !important;
+    text-decoration: none !important;
+  }
+  .sk-sidenav-cta {
+    margin-left: 0.4rem !important;
+    padding-left: 0.5rem !important;
+  }
+  .sk-sidenav-cta .btn,
+  .sk-sidenav-cta-btn {
+    padding: 0.35rem 0.7rem !important;
+    font-size: 0.46rem !important;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .sk-sidenav {
+    height: auto !important;
+    min-height: 54px !important;
+    max-height: none !important;
+    padding: 0.3rem 0.6rem !important;
+  }
+  .sk-sidenav-links a {
+    font-size: 0.44rem !important;
+    padding: 0.25rem 0.4rem !important;
+    min-height: 36px !important;
+    height: auto !important;
+  }
+  .sk-sidenav-cta .btn,
+  .sk-sidenav-cta-btn {
+    font-size: 0.42rem !important;
+    padding: 0.3rem 0.55rem !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   5. NAV LINKS — never underline, on any state
+   ───────────────────────────────────────────────────────────── */
+.sk-sidenav-links a,
+.sk-sidenav-links a:hover,
+.sk-sidenav-links a:focus,
+.sk-sidenav-links a:active,
+.sk-sidenav-links a.active {
+  text-decoration: none !important;
+  outline: none;
+}
+
+/* ── FIX 4A: Remove separating lines between nav items ── */
+/* The pill nav has li::after pseudo-elements acting as separators */
+.sk-sidenav-links li::after {
+  display: none !important;
+  opacity: 0 !important;
+  content: none !important;
+}
+/* Also remove any vertical separators that might be borders */
+.sk-sidenav-links li {
+  border-right: none !important;
+  border-left: none !important;
+}
+/* Remove the old top .nav border styles if present */
+.nav {
+  border-bottom: none !important;
+}
+.nav.scrolled {
+  border-bottom: none !important;
+  box-shadow: 0 1px 32px rgba(26,22,18,.06) !important;
+}
+
+/* ── FIX 4B: Remove underline effect from "The Collective" nav link ── */
+.sk-sidenav-links a::after,
+.sk-sidenav-links a::before {
+  display: none !important;
+  content: none !important;
+}
+/* Also remove any text-decoration underlines */
+.sk-sidenav-links a,
+.sk-sidenav-links a:hover,
+.sk-sidenav-links a:focus,
+.sk-sidenav-links a.active {
+  text-decoration: none !important;
+  text-underline-offset: unset !important;
+}
+/* Specifically target collective link */
+.sk-sidenav-links a[href*="collective"] {
+  text-decoration: none !important;
+}
+.sk-sidenav-links a[href*="collective"]::after,
+.sk-sidenav-links a[href*="collective"]::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* ── FIX 4C: Remove Contact CTA tooltip popup hint ── */
+.sk-sidenav-cta::after {
+  display: none !important;
+  opacity: 0 !important;
+  content: none !important;
+  visibility: hidden !important;
+}
+.sk-sidenav-cta:hover::after {
+  display: none !important;
+  opacity: 0 !important;
+}
+/* Also remove tooltips from nav item hover labels */
+.sk-sidenav-links li[data-label]::after {
+  display: none !important;
+}
+
+/* ── FIX 4D: Remove ALL nav separator lines and borders ── */
+/* The old top .nav bar used border-bottom */
+.nav,
+.nav.scrolled,
+.nav--top,
+.nav:not(.scrolled) {
+  border-bottom: none !important;
+  box-shadow: 0 1px 32px rgba(26,22,18,.06) !important;
+}
+/* When transparent (on hero) */
+.home .nav:not(.scrolled) {
+  box-shadow: none !important;
+}
+/* Sidenav pill — remove all internal separators */
+.sk-sidenav-links li + li {
+  border-left: none !important;
+}
+.sk-sidenav-links {
+  border: none !important;
+  /* Remove any gap/separator between items */
+  gap: 0 !important;
+}
+
+
+/* ── FIX 1C: Remove the 100px body padding-bottom causing empty footer space ── */
+/* Original: body { padding-bottom: 100px } was reserved for the floating pill nav.
+   The pill is now position:fixed so body padding is unnecessary. */
+body {
+  padding-bottom: 0 !important;
+}
+
+/* Extracted from legacy.css: final sidenav overrides. */
+
+/* The bottom pill (sk-sidenav) creates visual padding — remove extra gap */
+.sk-sidenav {
+  margin-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* 2. Sidenav drawer — ensure links list doesn't inherit pill flex gap */
+@media (max-width: 900px) {
+  .sk-sidenav.open .sk-sidenav-links li + li {
+    border-left: none !important;
+  }
+  .sk-sidenav.open .sk-sidenav-logo {
+    padding: 0 !important;
+    margin-bottom: 1.2rem !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LEFT SIDE NAVBAR — desktop always-expanded, floating panel
+   Mobile: keep bottom pill behaviour unchanged
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (min-width: 901px) {
+
+  /* Sidenav floats as an overlay — body and wrap stay untouched.
+     Only the about section left column needs to clear the 190px panel. */
+  body {
+    padding-left: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Reset the horizontal pill → vertical left panel */
+  .sk-sidenav {
+    position: fixed !important;
+    top: 50% !important;
+    left: 1.6rem !important;
+    bottom: auto !important;
+    transform: translateX(0) translateY(calc(-50% + 45px)) !important;
+    width: 160px !important;
+    min-width: 160px !important;
+    max-width: 160px !important;
+    height: auto !important;
+    max-height: calc(100vh - 4rem) !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    padding: 1.2rem 0.8rem !important;
+    border-radius: 20px !important;
+    overflow: visible !important;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.34, 1.4, 0.64, 1) !important;
+  }
+
+  .sk-sidenav.sk-sidenav--visible {
+    transform: translateX(0) translateY(-50%) !important;
+    opacity: 1 !important;
+  }
+
+  /* Logo — stacked at top, centred */
+  .sk-sidenav-logo {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 0 1.2rem !important;
+    padding-bottom: 1rem !important;
+    border-bottom: 1px solid var(--border-light) !important;
+    border-radius: 0 !important;
+  }
+  .sk-sidenav-logo-img {
+    height: 36px !important;
+    max-width: 36px !important;
+    margin-bottom: 0.4rem !important;
+  }
+  .sk-sidenav-logo-name {
+    display: block !important;
+    font-family: var(--font-display) !important;
+    font-size: 0.65rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.08em !important;
+    text-align: center !important;
+    color: var(--ink) !important;
+    white-space: nowrap !important;
+  }
+
+  /* Nav links — vertical stack */
+  .sk-sidenav-links {
+    flex-direction: column !important;
+    border-left: none !important;
+    width: 100% !important;
+    flex: 1 !important;
+    gap: 0 !important;
+  }
+  .sk-sidenav-links li {
+    width: 100% !important;
+    border-right: none !important;
+  }
+  .sk-sidenav-links a {
+    height: auto !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0.65rem 0.8rem !important;
+    font-size: 0.6rem !important;
+    letter-spacing: 0.1em !important;
+    border-radius: 10px !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+  .sk-sidenav-links a:hover,
+  .sk-sidenav-links a.active {
+    background: rgba(184,98,63,0.09) !important;
+    color: var(--terra) !important;
+    transform: none !important;
+  }
+  .sk-sidenav-links a.active {
+    background: rgba(184,98,63,0.13) !important;
+    border-left: 2px solid var(--terra) !important;
+    padding-left: calc(0.8rem - 2px) !important;
+  }
+
+  /* CTA button — bottom of panel */
+  .sk-sidenav-cta {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    padding-top: 1rem !important;
+    margin-top: 0.6rem !important;
+    border-top: 1px solid var(--border-light) !important;
+    width: 100% !important;
+  }
+  .sk-sidenav-cta .btn {
+    width: 100% !important;
+    height: auto !important;
+    padding: 0.7rem 1rem !important;
+    justify-content: center !important;
+    font-size: 0.58rem !important;
+    border-radius: 12px !important;
+  }
+  .sk-sidenav-cta .btn:hover {
+    width: 100% !important;
+  }
+
+  /* Hamburger hidden on desktop */
+  .sk-hamburger { display: none !important; }
+
+}
+
+/* ── Tablet 901-1100px ── */
+@media (min-width: 901px) and (max-width: 1100px) {
+}
+/* Extracted from legacy.css: responsive top-nav remnants. */
+@media(max-width:860px) and (min-width:769px){.nav-cta .btn{padding:.55rem 1rem;font-size:.6rem}}
+@media(max-width:800px) and (min-width:769px){.nav-cta{display:none}}
+@media(max-width:768px){
+  .nav{padding:1rem 1.5rem}
+  .nav.scrolled{padding:.8rem 1.5rem}
+  .nav-links,.nav-cta{display:none}
+  .nav-hamburger{display:flex}
+}
+
+/* Sidenav CTA - show compact contact button */
+.sk-sidenav-cta { display: flex !important; }
+
+/* ── 8. NAV CTA — scale on hover ─────────────────────────── */
+.nav-cta .btn{
+  transition:
+    background .25s var(--ease),
+    transform .22s var(--ease-spring),
+    box-shadow .25s var(--ease);
+}
+.nav-cta .btn:hover{
+  transform:translateY(-1px) scale(1.02);
+}

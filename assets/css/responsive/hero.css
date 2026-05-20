@@ -1,0 +1,121 @@
+@media (max-width: 960px) {
+  .hero--split .hero-left {
+    padding: 8rem 2.5rem 5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hcw-to {
+    font-size: clamp(2.8rem, 14vw, 7rem);
+  }
+
+  .hcw-from {
+    font-size: clamp(2.2rem, 10vw, 6rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero--split {
+    min-height: 100svh;
+    min-height: 100dvh;
+  }
+
+  .hero--split .hero-left {
+    display: none;
+  }
+
+  .hcw-from {
+    font-size: clamp(2rem, 9.5vw, 5rem);
+  }
+
+  .hero-from-wrap {
+    top: 30%;
+    left: 18vw;
+    transform: translateY(-100%);
+  }
+
+  .hero-to-wrap {
+    top: 42%;
+    transform: none;
+  }
+
+  .hero-journey {
+    margin-bottom: 2.2rem;
+  }
+
+  .stage-chaos {
+    font-size: clamp(.85rem, 3.5vw, 1rem);
+    padding-bottom: 1rem;
+  }
+
+  .stage-turning {
+    font-size: clamp(1.6rem, 7vw, 2.4rem);
+    padding-bottom: .9rem;
+  }
+
+  .stage-calm {
+    font-size: clamp(2.2rem, 10vw, 3.4rem);
+    padding-bottom: 1.2rem;
+  }
+
+  .hero-actions {
+    gap: .85rem;
+    margin-bottom: .2rem;
+  }
+
+  .hero-location {
+    margin-top: 1.4rem;
+    font-size: .58rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero--split .hero-left {
+    padding: 5rem 1.25rem 3rem;
+  }
+
+  .stage-chaos {
+    font-size: .82rem;
+    padding-bottom: .8rem;
+  }
+
+  .stage-turning {
+    font-size: clamp(1.45rem, 8vw, 2rem);
+    padding-bottom: .7rem;
+  }
+
+  .stage-calm {
+    font-size: clamp(2rem, 11vw, 2.8rem);
+    padding-bottom: 1rem;
+  }
+
+  .hero-journey {
+    margin-bottom: 1.8rem;
+  }
+
+  .display-impact {
+    font-size: clamp(3.5rem, 12vw, 5rem);
+  }
+
+  .quote-band-impact {
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .75rem;
+  }
+
+  .hero-actions .btn {
+    text-align: center;
+    justify-content: center;
+    padding: .85rem 1.5rem;
+  }
+
+  .hero-location {
+    margin-top: 1.2rem;
+    font-size: .55rem;
+    letter-spacing: .16em;
+  }
+}

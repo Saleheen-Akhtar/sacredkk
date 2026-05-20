@@ -1,0 +1,90 @@
+/* ==========================================================================
+   MOTION: PRIMARY OWNER (GSAP INIT STATES)
+   ========================================================================== */
+@layer motion {
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.sk-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  z-index: 10000;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--gold), var(--terra), var(--blush));
+}
+
+/* JS is the sole owner of animation timing, scroll logic, and transitions. */
+/* CSS provides ONLY the defaults and initial ready-states below. */
+
+.js-motion-ready .reveal,
+.js-motion-ready .reveal-left,
+.js-motion-ready .reveal-right,
+.js-motion-ready .reveal-scale,
+.js-motion-ready .section-enter,
+.js-motion-ready .reveal-cta,
+.js-motion-ready .stagger-children > * {
+  opacity: 0;
+}
+
+.js-motion-ready .reveal,
+.js-motion-ready .reveal-cta,
+.js-motion-ready .section-enter,
+.js-motion-ready .stagger-children > * {
+  transform: translateY(28px);
+}
+
+.js-motion-ready .reveal-left {
+  transform: translateX(-28px);
+}
+
+.js-motion-ready .reveal-right {
+  transform: translateX(28px);
+}
+
+.js-motion-ready .reveal-scale {
+  transform: scale(0.96);
+}
+
+.js-motion-ready .visible,
+.js-motion-ready .stagger-children.visible > *,
+.no-motion .reveal,
+.no-motion .reveal-left,
+.no-motion .reveal-right,
+.no-motion .reveal-scale,
+.no-motion .section-enter,
+.no-motion .reveal-cta,
+.no-motion .stagger-children > * {
+  opacity: 1;
+  filter: none;
+  transform: none;
+}
+
+.sk-wave-char {
+  display: inline-block;
+  animation: sk-wave 2.2s ease-in-out infinite;
+}
+
+.sk-wave-char.is-space {
+  animation: none;
+}
+
+@keyframes sk-wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-0.16em); }
+}
+
+} /* End of @layer motion */

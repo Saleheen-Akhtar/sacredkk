@@ -1,0 +1,21 @@
+/* ── TYPOGRAPHY ──────────────────────────────────────────── */
+.eyebrow{font-family:var(--font-ui);font-size:.63rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);display:flex;align-items:center;gap:.75rem}
+.eyebrow::before{content:'';width:20px;height:1px;background:currentColor;flex-shrink:0}
+.eyebrow-c,.eyebrow-center{justify-content:center}
+.eyebrow-c::before,.eyebrow-center::before{display:none}
+.eyebrow-light{color:var(--blush)}
+.eyebrow-light::before{display:none}
+.display-xl{font-family:var(--font-display);font-size:clamp(3.5rem,7vw,6.5rem);font-weight:700;line-height:1.02;letter-spacing:-.02em}
+/* display-impact: large-format single-phrase display. Used as second visual
+   crescendo after hero (e.g. quote band pull phrase). 6–8rem, ultra-light weight
+   so mass comes from size, not stroke — opposite of stage-calm. */
+.display-impact{font-family:var(--font-display);font-size:clamp(5rem,9vw,8rem);font-weight:200;line-height:.9;letter-spacing:-.03em;font-style:italic}
+.display-impact em{font-style:normal;font-weight:800;color:var(--terra)}
+/* Quote band impact phrase — centered, blush-white, large breathing room below */
+.quote-band-impact{color:rgba(255,255,255,.9);text-align:center;margin:0 auto 3.5rem;max-width:none;line-height:1.05}
+.quote-band-impact em{color:var(--blush)}
+.display-xl em{font-style:italic;font-weight:700;color:var(--terra)}
+.display-h2{ font-family:var(--font-display); font-size:clamp(4.5rem,6vw,6.5rem); font-weight:700; line-height:.95; letter-spacing:-.03em;}
+.display-h2 em{font-style:italic;color:var(--terra)}
+.display-h3{font-family:var(--font-display);font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:400;line-height:1.2}
+.body-serif{font-family:var(--font-display);font-size:1.15rem;font-weight:300;line-height:1.85;color:var(--ink-muted);max-width:62ch}

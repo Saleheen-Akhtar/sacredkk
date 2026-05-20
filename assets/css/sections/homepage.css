@@ -1,0 +1,38 @@
+.hero,
+.about-section,
+.sk-about,
+.sk-rc-section,
+.strip--circular,
+.founders-section,
+.faq-section,
+.cta-section,
+.sk-home-posts-section,
+.sk-related-section,
+.sk-newsletter-section,
+.sk-collective-section,
+.sk-collective-founders-section {
+  position: relative;
+}
+
+.wrap,
+.wrap-narrow {
+  width: min(100% - 2rem, var(--sk-content-max));
+}
+
+.wrap-narrow {
+  width: min(100% - 2rem, var(--sk-content-narrow));
+}
+
+.about-section,
+.sk-rc-section,
+.strip--circular,
+.founders-section,
+.faq-section,
+.cta-section,
+.sk-home-posts-section,
+.sk-related-section,
+.sk-newsletter-section,
+.sk-collective-section,
+.sk-collective-founders-section {
+  padding-block: var(--space-xl);
+}

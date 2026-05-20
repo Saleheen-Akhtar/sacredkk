@@ -1,0 +1,77 @@
+/* ═══════════════════════════════════════════════════════════
+   OFFERINGS RESPONSIVE — Tablet & Mobile Breakpoints
+   ═══════════════════════════════════════════════════════════ */
+
+/* Desktop (min-width: 768px) — Already handled in base styles */
+
+/* Tablet / Small screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .sk-rc-track {
+    padding: 1.5rem 1.2rem 1rem;
+    scroll-snap-type: none; /* GSAP owns scrollLeft for infinite loop — snap fights it */
+    gap: 1.2rem;
+    touch-action: pan-x; /* native horizontal scroll on mobile */
+  }
+  .sk-rc-card-wrap {
+    /* scroll-snap-align removed — snap disabled on mobile */
+  }
+  .sk-rc-card {
+    width: calc(88vw - 2.4rem);
+    max-width: 320px;
+    height: 440px;
+    touch-action: manipulation; /* instant tap, no 300ms delay */
+  }
+}
+
+/* Mobile (max-width: 480px) — Bottom sheet modal */
+@media (max-width: 480px) {
+  .sk-rc-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+  .sk-rc-overlay-box {
+    border-radius: 20px 20px 0 0;
+    margin: 0;
+    max-height: 92vh;
+    width: 100%;
+  }
+  #sk-rc-overlay-content {
+    padding: 0 1.25rem;
+  }
+  .sk-rc-ol-header {
+    padding: 1.6rem 1.25rem 1.2rem;
+  }
+  .sk-rc-ol-title {
+    font-size: clamp(1.4rem, 6.5vw, 2rem);
+  }
+  .sk-rc-ol-num {
+    font-size: 2.2rem;
+  }
+  .sk-rc-ol-image {
+    float: none;
+    width: 100%;
+    margin: 0 0 1.2rem 0;
+    border-radius: 4px;
+  }
+  .sk-rc-ol-image img {
+    max-height: 200px;
+    width: 100%;
+  }
+  .sk-rc-ol-action-row {
+    padding: 1.2rem 1.25rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: .8rem;
+  }
+  .sk-rc-ol-cta {
+    width: 100%;
+    justify-content: center;
+  }
+  .sk-rc-ol-price {
+    font-size: 1.4rem;
+  }
+  .sk-rc-overlay-close {
+    top: .9rem;
+    right: .9rem;
+  }
+}

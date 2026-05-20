@@ -1,0 +1,197 @@
+.sk-about {
+  position: relative;
+  padding-block: var(--sk-section-padding);
+  background: var(--ivory);
+  background-image: url('https://sacredkompass.org/wp-content/uploads/2026/05/Loust-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.sk-about::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(251, 250, 246, 0.93);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.sk-about > * {
+  position: relative;
+  z-index: 1;
+}
+
+.sk-about__inner {
+  display: grid;
+  grid-template-columns: minmax(18rem, 1fr) minmax(0, 1.15fr);
+  align-items: stretch;
+  gap: clamp(3rem, 5vw, var(--space-xl));
+  min-height: 30rem;
+  padding-right: clamp(var(--space-md), 4vw, var(--space-lg));
+}
+
+.sk-about__brand-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+
+.sk-about__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-start;
+}
+
+.sk-about__brand-line {
+  font-family: var(--font-display);
+  font-size: clamp(3.8rem, 8vw, 7.5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin: 0;
+  padding: 0;
+  background-image: var(--hero-img, none);
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 2px 12px rgba(180, 130, 60, 0.15));
+}
+
+.sk-about__brand-line--sacred {
+  letter-spacing: 0.095em;
+}
+
+.sk-about__brand-line--kompass {
+  letter-spacing: -0.03em;
+}
+
+.sk-about__tagline {
+  margin: 1.5rem 0 0;
+  padding-top: 0;
+  overflow: visible;
+}
+
+.sk-about__tagline-text {
+  display: inline-flex;
+  justify-content: space-between;
+  white-space: nowrap;
+  padding-left: var(--space-xl);
+  transform-origin: left center;
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 2.1vw, 2.1rem);
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  color: var(--terra);
+}
+
+.sk-about__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
+  min-width: 0;
+  max-width: 100%;
+  padding-left: var(--space-md);
+}
+
+.sk-about__row {
+  padding-block: clamp(1.5rem, 2vw, var(--space-md));
+  border-top: 1px solid rgba(212, 175, 106, 0.18);
+}
+
+.sk-about__row:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.sk-about__org,
+.sk-about__heading,
+.sk-about__bridge,
+.sk-about__body,
+.sk-about__welcome {
+  max-width: 100%;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.sk-about__org {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ink-muted);
+}
+
+.sk-about__heading {
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.5rem);
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+
+.sk-about__bridge {
+  margin: 0;
+  max-width: 58ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.7vw, 1.65rem);
+  font-weight: 800;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.sk-about__body {
+  margin: var(--space-sm) 0 0;
+  max-width: 56ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.6vw, 1.55rem);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--ink-muted);
+}
+
+.sk-about__welcome {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.5vw, 1.55rem);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: var(--ink-muted);
+}
+
+.sk-about__site-link {
+  position: relative;
+  display: inline-block;
+  padding: 0.05em 0.4em 0.1em;
+  border: 1px solid rgba(184, 98, 63, 0.35);
+  border-radius: 2em;
+  background: rgba(184, 98, 63, 0.05);
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--terra);
+  transition: background 0.25s, border-color 0.25s, color 0.25s;
+}
+
+.sk-about__site-link:hover {
+  background: rgba(184, 98, 63, 0.12);
+  border-color: rgba(184, 98, 63, 0.65);
+  color: var(--terra);
+}
