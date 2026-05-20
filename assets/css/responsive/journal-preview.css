@@ -1,0 +1,8 @@
+@layer responsive {
+@media(max-width: 1024px) {
+  .sk-jp-grid--two {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+}

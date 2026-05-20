@@ -3,6 +3,10 @@
 
 @layer tokens {
   :root {
+  --color-error: #c94f4f;
+  --color-success: #7dba8b;
+  --color-white: #fff;
+
   --sidenav-height: 82px;
   --space-xs: 0.5rem;
   --space-sm: 1rem;

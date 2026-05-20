@@ -1,12 +1,4 @@
-/*
-Theme Name:  Sacred Kompass
-Theme URI:   https://sacredkompass.org
-Author:      Sacred Kompass Collective
-Version:     8.5.0
-License:     GNU General Public License v2 or later
-Text Domain: sacred-kompass
-Description: Luxury spiritual wellness. ACF + CPT. Fully free stack. Zero paid plugins.
-*/
+@layer legacy {
 
 /* Google Fonts loaded ont-size: clamp(0.95rem, 1.3vw, 1.1rem);via <link> in header.php for non-blocking render */
 
@@ -42,7 +34,6 @@ Description: Luxury spiritual wellness. ACF + CPT. Fully free stack. Zero paid p
 }
 
 /* Section floating shadow — creates depth separation between sections */
-.about-section,
 .founders-section,
 .sk-journal-preview-section,
 .sk-home-posts-section {
@@ -59,8 +50,6 @@ Description: Luxury spiritual wellness. ACF + CPT. Fully free stack. Zero paid p
    ========================================================================== */
 
 /* ── ABOUT ───────────────────────────────────────────────── */
-.about-section{padding:var(--sk-section-padding) 0;background:var(--ivory)}
-.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start;margin-top:4rem}
 .about-text p{font-family:var(--font-display);font-size:1.12rem;font-weight:300;color:var(--ink-mid);line-height:1.9;max-width:62ch}
 .about-text p+p{margin-top:1.4rem}
 .about-pull{padding:3rem 0 3rem 3rem;border-left:1px solid var(--gold);margin-top:3rem;position:relative}
@@ -321,7 +310,6 @@ Description: Luxury spiritual wellness. ACF + CPT. Fully free stack. Zero paid p
 /* ── RESPONSIVE ──────────────────────────────────────────── */
 @media(max-width:1100px){.values-grid{grid-template-columns:repeat(2,1fr)}.cta-layout{gap:4rem}}
 @media(max-width:960px){
-  .about-layout{grid-template-columns:1fr;gap:3rem}
   .cta-layout{grid-template-columns:1fr;gap:3rem}
   .cta-text-col{position:static}
   .footer-grid{grid-template-columns:1fr 1fr}
@@ -498,13 +486,6 @@ Description: Luxury spiritual wellness. ACF + CPT. Fully free stack. Zero paid p
 }
 
 /* Text body */
-.sk-tmc-body {
-  padding: 1rem 1.1rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: .3rem;
-  flex: 1;
-}
 
 .sk-tmc-name {
   font-family: var(--font-display);
@@ -889,13 +870,6 @@ Description: Luxury spiritual wellness. ACF + CPT. Fully free stack. Zero paid p
   color: var(--gold-light);
   line-height: 1;
 }
-.sk-blog-card-body {
-  padding: 1.6rem 0.2rem 0;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  gap: .8rem;
-}
 .sk-blog-card-title {
   font-family: var(--font-display);
   font-size: clamp(1.3rem, 2vw, 1.6rem);
@@ -977,11 +951,6 @@ Description: Luxury spiritual wellness. ACF + CPT. Fully free stack. Zero paid p
   border-radius: var(--r-card);
   box-shadow: var(--shadow-lift);
 }
-.sk-post-body {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 5rem 2.5rem 1.5rem;
-}
 
 /* ── Share bar ── */
 .sk-post-share {
@@ -1017,13 +986,6 @@ Description: Luxury spiritual wellness. ACF + CPT. Fully free stack. Zero paid p
 .sk-post-body .wp-block-jetpack-like { margin-bottom: 0 !important; }
 .sk-post-body > hr:last-of-type,
 .sk-post-body .sd-content + hr { display: none; }
-.sk-post-body {
-  font-family: var(--font-display);
-  font-size: 1.12rem;
-  font-weight: 300;
-  line-height: 1.9;
-  color: var(--ink-mid);
-}
 .sk-post-body h2 {
   font-family: var(--font-display);
   font-size: clamp(1.6rem, 2.8vw, 2.2rem);
@@ -1089,8 +1051,6 @@ Description: Luxury spiritual wellness. ACF + CPT. Fully free stack. Zero paid p
   margin-top: 0;
 }
 /* Remove gap between post body (which contains the like widget) and footer */
-.sk-post-body { padding-bottom: 0; }
-.sk-post-tags { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
 .sk-tags-label {
   font-family: var(--font-ui);
   font-size: .62rem;
@@ -1119,8 +1079,6 @@ Description: Luxury spiritual wellness. ACF + CPT. Fully free stack. Zero paid p
   .sk-post-hero { padding: 5rem 0 2rem; }
   .sk-post-hero-img { padding: 0 1rem; }
   .sk-post-hero-img img { height: 40vh; }
-  .sk-post-body { padding: 3rem 1.5rem; }
-}
 
 /* ── Posts section ── */
 .sk-home-posts-section { padding: 5rem 0 6rem; }
@@ -1156,13 +1114,6 @@ Description: Luxury spiritual wellness. ACF + CPT. Fully free stack. Zero paid p
   position: absolute;
   inset: 0;
   background: linear-gradient(to right, rgba(26,22,18,.06), transparent);
-}
-.sk-home-featured-body {
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1.4rem;
 }
 .sk-home-featured-body .display-h2 { margin-top: .4rem; font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1.1; }
 .sk-home-featured-body .display-h2 a { color: var(--ink); transition: color .2s; }
@@ -1369,14 +1320,6 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
   color: var(--terra);
 }
 
-.sk-newsletter-body {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 300;
-  line-height: 1.85;
-  color: var(--ink-muted);
-  margin-bottom: 2.5rem;
-}
 
 .sk-newsletter-form-wrap {
   max-width: 460px;
@@ -1842,21 +1785,6 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
 }
 
 /* Name strip — visible by default, hides on hover */
-.sk-collective-body {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1.4rem 1.8rem 1.8rem;
-  background: linear-gradient(to top, rgba(26,22,18,.75) 0%, transparent 100%);
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  transition: opacity .4s ease;
-}
-.sk-collective-card:hover .sk-collective-body {
-  opacity: 0;
-}
 
 /* Hover overlay with full member info */
 .sk-collective-hover-overlay {
@@ -1979,9 +1907,6 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
   .sk-collective-card.is-revealed .sk-collective-hover-overlay {
     opacity: 1;
     transform: translateY(0);
-  }
-  .sk-collective-card.is-revealed .sk-collective-body {
-    opacity: 0;
   }
   .sk-collective-card.is-revealed .sk-collective-photo img {
     transform: scale(1.05);
@@ -2469,15 +2394,6 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
 }
 
 /* Bottom body text overlay */
-.sk-cover-body {
-  position: relative;
-  z-index: 2;
-  padding: 2.5rem 2.5rem 2.8rem;
-  display: flex;
-  flex-direction: column;
-  gap: .85rem;
-  pointer-events: none;
-}
 .sk-cover-body a { pointer-events: all; }
 
 .sk-cover-date {
@@ -2578,8 +2494,6 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
 @media (max-width: 680px) {
   .sk-archive-header { flex-direction: column; align-items: flex-start; }
   .sk-archive-header .sk-search-wrapper { max-width: 100%; width: 100%; }
-  .sk-cover-body { padding: 1.8rem 1.5rem 2rem; }
-  .sk-cover-top-meta { left: 1.5rem; right: 1.5rem; top: 1.5rem; }
   .sk-cover-title { font-size: clamp(1.5rem, 6vw, 2rem); }
 }
 
@@ -2920,9 +2834,6 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
 }
 .sk-event-card:hover .sk-event-card__img { transform: scale(1.04); }
 
-.sk-event-card__body { padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem; flex: 1; }
-
-.sk-event-card__meta-row { display: flex; align-items: flex-start; gap: 1rem; }
 
 .sk-event-card__date-badge {
   display: flex;
@@ -3191,7 +3102,6 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
    No decorative icons. SEO-friendly. Clean.
    ══════════════════════════════════════════════════════════════════════ */
 
-.about-layout--v13 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(4rem, 8vw, 9rem);
@@ -3375,20 +3285,9 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
 }
 
 /* SEO body text — visible, supplements the headings */
-.about-wisdom-body {
-  font-family: var(--font-display);
-  font-size: clamp(.9rem, 1.2vw, 1.05rem);
-  font-weight: 300;
-  font-style: italic;
-  line-height: 1.8;
-  color: var(--ink-muted);
-  margin: 0;
-  max-width: 42ch;
-}
 
 /* ── Responsive ── */
 @media (max-width: 860px) {
-  .about-layout--v13 {
     grid-template-columns: 1fr;
     gap: 3.5rem;
   }
@@ -3466,7 +3365,7 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
 /* ═══════════════════════════════════════════════════════════════
 
 
-@layer legacy {
+
 
 /* ==========================================================================
    7. RESPONSIVE & EMERGENCY OVERRIDES LEGACY
@@ -3548,11 +3447,6 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
     padding: 2.5rem 0 !important;
   }
   .sk-founder-rows-grid .sk-founder-row--flip .sk-founder-row-photo,
-  .sk-founder-rows-grid .sk-founder-row--flip .sk-founder-row-body { order: unset !important; }
-  .sk-founder-rows-grid .sk-founder-row-photo {
-    aspect-ratio: 4/3 !important;
-    max-height: 260px !important;
-  }
 }
 @media (max-width: 600px) {
   .sk-founder-rows-grid .sk-founder-row { padding: 2rem 0 !important; }
@@ -3644,10 +3538,6 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
    ══════════════════════════════════════════════════════════ */
 
 /* ── FIX 1A: Remove empty space after footer ── */
-body {
-  margin: 0;
-  padding-bottom: 0 !important;
-}
 html {
   margin: 0;
   padding: 0;
@@ -3662,14 +3552,10 @@ main {
   margin-bottom: 0 !important;
 }
 /* Remove bottom clearance created by the floating pill nav */
-body {
-  padding-bottom: 0 !important;
-}
 
 /* Footer bottom row — tighten to remove excess space */
 
 /* ── FIX 2: About section — perfectly equal 50/50 columns with centred gap ── */
-.about-layout--v13 {
   display: grid;
   grid-template-columns: 1fr 1fr !important;
   gap: clamp(3rem, 6vw, 7rem) !important;
@@ -3688,18 +3574,15 @@ body {
 }
 
 /* ── FIX 3: About transition cleanup ── */
-.about-section {
   position: relative;
   z-index: 2;
   box-shadow: none;
 }
 /* Ensure sections stack correctly */
-.about-section ~ *,
 .founders-section,
 .values-section,
 .cta-section,
 .sk-cta-section,
-.journal-preview-section,
 .philosophy-strip,
 footer.footer {
   position: relative;
@@ -3728,12 +3611,8 @@ html {
   transform: translateZ(0); /* GPU compositing hint */
 }
 /* Prevent momentum scroll conflict on iOS */
-body {
-  -webkit-overflow-scrolling: touch;
-}
 /* Smooth section transitions — reduce jank on scroll */
 section,
-.about-section,
 .founders-section,
 .cta-section,
 footer.footer {
@@ -3815,9 +3694,6 @@ footer.footer {
     aspect-ratio: 2/3 !important;
   }
 
-  .sk-collective-body {
-    padding: 0.8rem 0.9rem 1rem !important;
-  }
 
   .sk-collective-name--strip {
     font-size: 0.82rem !important;
@@ -4228,12 +4104,6 @@ footer.footer {
 .sk-story-preview-card:hover .sk-story-preview-card__img img {
   transform: scale(1.04);
 }
-.sk-story-preview-card__body {
-  padding: 1.4rem 1.6rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
 .sk-story-preview-card__cat {
   font-family: var(--font-body);
   font-size: 0.6rem;
@@ -4404,9 +4274,6 @@ footer.footer {
 }
 
 /* Body */
-.sk-stories-body {
-  padding-top: 3rem;
-}
 
 /* Hero story */
 .sk-story-hero {
@@ -4604,12 +4471,6 @@ footer.footer {
   transition: transform 0.5s var(--ease);
 }
 .sk-story-card:hover .sk-story-card__img img { transform: scale(1.04); }
-.sk-story-card__body {
-  padding: 1.6rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
 .sk-story-card__meta {
   display: flex;
   align-items: center;
@@ -4738,9 +4599,6 @@ footer.footer {
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
   margin-bottom: 3rem;
-}
-.sk-story-single__body {
-  padding-top: 1rem;
 }
 .sk-story-single__content {
   font-family: var(--font-display);
@@ -4923,13 +4781,6 @@ footer.footer {
 }
 
 /* Card body */
-.sk-sp-card-body {
-  padding: 1.4rem 1.6rem 1.6rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  gap: 0.6rem;
-}
 .sk-sp-card-title {
   font-family: var(--font-display);
   font-size: 1.1rem;

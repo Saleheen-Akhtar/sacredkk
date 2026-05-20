@@ -44,7 +44,7 @@
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--color-white);
   background: var(--terra);
   text-decoration: none;
   padding: 0.65rem 1.4rem;
@@ -59,7 +59,7 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 24px rgba(184,98,63,0.38);
   gap: 0.7rem;
-  color: #fff;
+  color: var(--color-white);
 }
 .sk-jp-see-all svg { flex-shrink: 0; }
 
@@ -172,7 +172,7 @@
   font-weight: 400;
   font-style: italic;
   line-height: 1.25;
-  color: #fff;
+  color: var(--color-white);
   margin: 0;
   flex: 1;
   text-shadow: 0 1px 12px rgba(26,22,18,0.35);
@@ -194,14 +194,14 @@
 }
 .sk-jp-featured:hover .sk-jp-feat-arrow {
   background: var(--terra);
-  color: #fff;
+  color: var(--color-white);
   transform: rotate(45deg);
 }
 
 /* Keyboard focus — same visual feedback as hover (Fix: aria UX) */
 .sk-jp-featured-link:focus-visible .sk-jp-feat-arrow {
   background: var(--terra);
-  color: #fff;
+  color: var(--color-white);
   transform: rotate(45deg);
   outline: 2px solid var(--terra);
   outline-offset: 3px;

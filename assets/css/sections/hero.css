@@ -92,7 +92,7 @@
 
 .hero--split .hero-left .stage-chaos { color: rgba(255,255,255,.55); }
 .hero--split .hero-left .stage-turning { color: rgba(255,255,255,.82); }
-.hero--split .hero-left .stage-calm { color: #fff; }
+.hero--split .hero-left .stage-calm { color: var(--color-white); }
 .hero--split .hero-left .stage-calm em { font-style: italic; color: var(--blush); }
 .hero--split .hero-left .hero-sub { color: rgba(255,255,255,.72); max-width: 560px; }
 .hero--split .hero-left .hero-location { color: rgba(255,255,255,.42); }
@@ -131,7 +131,7 @@
   font-size: clamp(4rem, 13vw, 13rem);
   font-weight: 800;
   font-style: italic;
-  color: #fff;
+  color: var(--color-white);
   text-shadow: 0 2px 40px rgba(0,0,0,.2);
   white-space: nowrap;
   line-height: 1;

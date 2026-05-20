@@ -5,6 +5,7 @@ const Terser = require('terser');
 
 const root = path.resolve(__dirname, '..');
 const cssFiles = [
+  'assets/css/core/legacy.css',
   'assets/css/core/theme.css',
   'assets/css/core/reset.css',
   'assets/css/core/layout.css',
@@ -13,7 +14,7 @@ const cssFiles = [
   'assets/css/sections/about.css',
   'assets/css/sections/homepage.css',
   'assets/css/sections/editorial.css',
-  'assets/css/core/legacy.css',
+
   'assets/css/sections/navigation.css',
   'assets/css/sections/announcement.css',
   'assets/css/sections/journal-preview.css',
@@ -26,6 +27,9 @@ const cssFiles = [
   'assets/css/sections/faq.css',
   'assets/css/utilities/hooks.css',
   'assets/css/animations/runtime.css',
+  'assets/css/responsive/cta.css',
+  'assets/css/responsive/journal-preview.css',
+  'assets/css/responsive/newsletter.css',
   'assets/css/responsive/about.css',
   'assets/css/responsive/hero.css',
   'assets/css/responsive/offerings.css',
@@ -58,12 +62,12 @@ const appFiles = [
 ];
 
 function read(relativePath) {
-  try {
-    return fs.readFileSync(path.join(root, relativePath), 'utf8');
-  } catch (err) {
+  const full = path.join(root, relativePath);
+  if (!fs.existsSync(full)) {
     console.warn(`[WARN] Skipping ${relativePath} - not found`);
     return '';
   }
+  return fs.readFileSync(full, 'utf8');
 }
 
 function write(relativePath, content) {

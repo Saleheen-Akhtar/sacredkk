@@ -76,8 +76,8 @@
   appearance: none;
   border: none;
   cursor: pointer;
-  /* Parchment gradient — from-[#f2f0eb] to-[#fff9eb] */
-  background: linear-gradient(to bottom, var(--ivory-warm), #fffbf0);
+  /* Parchment gradient — from-[#f2f0eb] to-[var(--color-white)9eb] */
+  background: linear-gradient(to bottom, var(--ivory-warm), var(--color-white)bf0);
   border-radius: 24px;
   width: 320px;
   height: 460px;
@@ -202,7 +202,7 @@
   font-weight: 700;
   letter-spacing: .02em;
   text-transform: none;
-  color: #fff;
+  color: var(--color-white);
   text-align: center;
   margin-top: 1.2rem;
   position: relative;
@@ -297,7 +297,7 @@
   height: 2.2rem;
   border-radius: 50%;
   background: var(--ink-mid);
-  color: #fff;
+  color: var(--color-white);
   align-items: center;
   justify-content: center;
   border: none;
