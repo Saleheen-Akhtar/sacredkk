@@ -1,3 +1,4 @@
+@layer components {
 .hero,
 .about-section,
 .sk-about,
@@ -35,4 +36,5 @@
 .sk-collective-section,
 .sk-collective-founders-section {
   padding-block: var(--space-xl);
+}
 }

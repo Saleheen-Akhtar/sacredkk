@@ -2,7 +2,7 @@
   const app = window.SK = window.SK || {};
   const dom = app.dom;
   if (!dom) return;
-  dom.onReady(() => {
+  dom.onReady('Nav', () => {
     document.documentElement.style.setProperty('--sidenav-offset', '0px');
     const panel = dom.qs('#sk-sidenav');
     const backdrop = dom.qs('#sk-sidenav-backdrop');

@@ -1,3 +1,4 @@
+@layer components {
 .sk-home-hero,
 .sk-post-hero,
 .sk-collective-hero {
@@ -11,4 +12,5 @@
 .sk-related-section,
 .sk-newsletter-section {
   padding-bottom: var(--sk-section-padding);
+}
 }

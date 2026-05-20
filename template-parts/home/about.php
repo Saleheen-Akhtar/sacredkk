@@ -23,7 +23,7 @@ $heading     = sk_option('about_heading', '');
 $body        = sk_option('about_body', '');
 ?>
 
-<section class="about-section sk-about" id="about"
+<section class="sk-about" id="about"
          aria-labelledby="about-heading"
          itemscope itemtype="https://schema.org/Organization">
 

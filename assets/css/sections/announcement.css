@@ -1,3 +1,4 @@
+@layer components {
 .sk-announcement-bar {
   position: relative;
   z-index: 9999;
@@ -167,4 +168,5 @@
   .sk-ann-countdown {
     display: none;
   }
+}
 }

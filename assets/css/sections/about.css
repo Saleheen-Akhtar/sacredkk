@@ -1,3 +1,4 @@
+@layer components {
 .sk-about {
   position: relative;
   padding-block: var(--sk-section-padding);
@@ -194,4 +195,5 @@
   background: rgba(184, 98, 63, 0.12);
   border-color: rgba(184, 98, 63, 0.65);
   color: var(--terra);
+}
 }

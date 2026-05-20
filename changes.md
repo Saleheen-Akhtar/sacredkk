@@ -27,3 +27,10 @@
 - **P3 Build Quality:** Integrated `clean-css` and `terser` into the build process replacing the fragile regex logic. Cleaned up `node_modules` from tracking by fixing the `.gitignore`.
 - **P3 PHP Cleanup:** Removed the duplicate logo fallback conditional branch in `header.php`. Extracted hardcoded `home_url('/#contact')` string repeats in `header.php` to use the global `$sk_nav_cta_url` variable.
 - **Long Term:** Created `assets/css/core/layout.css` starting the massive task to deconstruct the monolithic `legacy.css` into modular layout constructs. Reconfigured `scripts/build-assets.js` to build it properly.
+
+## Final Fixes & Cascade Resolution (Round 2)
+- **P0 Build Updates:** Included `founders-slider.js` in `scripts/build-assets.js` to fix the broken Collective page slider. Successfully regenerated the dist outputs. Also ensured `legacy.css` has no loose CSS syntax falling outside of the `@layer` brace. Fixed `template-parts/home/about.php` background image variable loading incorrectly.
+- **P1 Component Layering:** Pushed all unlayered modular section CSS files inside `@layer components {}` and responsive CSS files inside `@layer responsive {}` allowing `legacy.css` and base values to appropriately compute using CSS cascade architecture.
+- **P1 Hero & Nav Cascades:** Fixed `hero.css` and `.nav:not(.scrolled)` bug where elements overlapped improperly by injecting `.home .sk-sidenav:not(.sk-sidenav--visible)` with transparency instead. Reset `body { padding-left: 0 }` inside `theme.css`. Removed duplicate layout padding rules like `.about-section` off of `about.php`.
+- **P2 Extraction:** Extracted component CSS for `sections/founders.css`, `sections/values.css`, and `sections/footer.css` straight out of `legacy.css` logic to reduce bundle size and separate concerns. Assigned name identifier `dom.onReady('Nav')` for the navigation initialization inside `nav.js`.
+- **P3 Dynamic Resizing:** Exchanged rigid `body { padding-bottom: 100px }` hardcode into CSS variable `--sidenav-height: 82px;` to adapt dynamically with sizing. Purged `.strip--circular::before` from Legacy code to fix overlay rendering bugs over the new structure.

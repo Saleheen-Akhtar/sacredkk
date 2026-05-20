@@ -1,7 +1,9 @@
+@layer components {
+
 /* ==========================================================================
    HERO: PRIMARY OWNER
    ========================================================================== */
-@layer components {
+
 
 .hero,
 .sk-home-hero {
@@ -9,31 +11,11 @@
 }
 
 /* Home nav over hero */
-.home .nav:not(.scrolled) {
-  background: transparent !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  border-bottom-color: transparent !important;
-  box-shadow: none !important;
-}
-
-.home .nav:not(.scrolled) .nav-links a,
-.home .nav:not(.scrolled) .nav-logo,
-.home .nav:not(.scrolled) .nav-logo-img {
-  color: rgba(255,255,255,.9);
-}
-
-.home .nav:not(.scrolled) .nav-links a::after {
-  background: #fff;
-}
-
-.home .nav:not(.scrolled) .nav-hamburger span {
-  background: #fff;
-}
-
-.home .nav:not(.scrolled) .btn-primary {
-  background: var(--terra);
-  color: #fff;
+/* Home nav over hero */
+.home .sk-sidenav:not(.sk-sidenav--visible) {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(20px);
 }
 
 /* Current cinematic hero */
@@ -203,3 +185,4 @@
 }
 
 } /* End of @layer components */
+}

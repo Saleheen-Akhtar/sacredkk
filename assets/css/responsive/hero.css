@@ -1,3 +1,4 @@
+@layer responsive {
 @media (max-width: 960px) {
   .hero--split .hero-left {
     padding: 8rem 2.5rem 5rem;
@@ -118,4 +119,5 @@
     font-size: .55rem;
     letter-spacing: .16em;
   }
+}
 }
