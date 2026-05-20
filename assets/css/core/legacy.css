@@ -33,22 +33,8 @@ Description: Luxury spiritual wellness. ACF + CPT. Fully free stack. Zero paid p
    ──────────────────────────────────────────────────────────── */
 
 /* Sections that need a top gradient bleed into the previous bg */
-.strip--circular::before,
-.founders-section::after,
-  content: '';
-  position: absolute;
-  left: 0; right: 0;
-  height: 6rem;
-  pointer-events: none;
-  z-index: 1;
-}
 
 /* Strip top gradient removed per design update */
-.strip--circular::before {
-  top: 0;
-  background: transparent;
-  z-index: 2;
-}
 
 /* Gentle ambient glow at top of ivory-warm sections */
   top: 0;
@@ -318,49 +304,6 @@ Description: Luxury spiritual wellness. ACF + CPT. Fully free stack. Zero paid p
 .sk-contact-fallback-form textarea.sk-valid,
 .sk-contact-fallback-form select.sk-valid{border-color:rgba(122,149,121,.55) !important}
 
-/* ── FOOTER v2 — Making Today inspired typographic style ─── */
-.footer.sk-footer-v2{background:var(--footer-bg);color:rgba(255,255,255,.55);padding:0}
-
-/* Top section: giant wordmark + CTA */
-.sk-foot-top{padding:5rem 0 3.5rem}
-.sk-foot-brand-row{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;margin-bottom:1.5rem}
-.sk-foot-wordmark-wrap{display:flex;align-items:center;gap:1.25rem}
-.sk-foot-logo-img{display:block;height:72px;width:auto;max-width:80px;object-fit:contain}
-.sk-foot-wordmark{font-family:var(--font-display);font-size:clamp(3.2rem,8vw,7rem);font-weight:700;line-height:.9;letter-spacing:-.03em;color:rgba(255,255,255,.9)}
-.sk-foot-wordmark em{font-style:italic;color:var(--blush)}
-.sk-foot-cta{border-color:rgba(255,255,255,.22);color:rgba(255,255,255,.7);flex-shrink:0;align-self:center;font-size:.62rem;padding:.75rem 1.6rem}
-.sk-foot-cta:hover{border-color:rgba(255,255,255,.6);color:#fff;background:rgba(255,255,255,.06)}
-.sk-foot-tagline{font-family:var(--font-display);font-size:1rem;font-weight:300;line-height:1.75;color:rgba(255,255,255,.52);max-width:480px}
-
-/* Horizontal rule */
-.sk-foot-divider{width:100%;height:1px;background:rgba(255,255,255,.06)}
-/* Hide ALL dividers on desktop — the column border-tops provide enough separation */
-@media(min-width:769px){
-  .sk-foot-divider{display:none}
-}
-/* On mobile keep dividers visible for structure */
-@media(max-width:768px){
-  .sk-foot-divider{display:block}
-  .sk-foot-divider:first-of-type{display:none}
-}
-
-/* Mid columns */
-.sk-foot-mid{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5rem;padding:3.5rem 0}
-.sk-foot-col{padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.1)}
-.sk-foot-col-label{font-family:var(--font-ui);font-size:.56rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.44);margin-bottom:1.4rem}
-.sk-foot-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
-.sk-foot-col a{font-family:var(--font-display);font-size:.95rem;font-weight:300;color:rgba(255,255,255,.58);transition:color .22s;text-decoration:none;position:relative;display:inline-block}
-.sk-foot-col a::after{content:'';position:absolute;bottom:-1px;left:0;right:100%;height:1px;background:rgba(255,255,255,.35);transition:right .35s var(--ease)}
-.sk-foot-col a:hover{color:rgba(255,255,255,.82)}
-.sk-foot-col a:hover::after{right:0}
-
-/* Bottom bar */
-.sk-foot-bottom{display:flex;align-items:center;justify-content:space-between;padding:2rem 0 3rem;gap:1rem}
-.sk-foot-copy{font-family:var(--font-ui);font-size:.6rem;letter-spacing:.08em;color:rgba(255,255,255,.38)}
-.sk-foot-location{font-family:var(--font-ui);font-size:.6rem;letter-spacing:.1em;color:rgba(255,255,255,.2)}
-
-
-/* ── LEGAL PAGES ─────────────────────────────────────────── */
 .legal-hero{padding:8rem 0 4rem;background:var(--ivory-warm);border-bottom:1px solid var(--border);text-align:center}
 .legal-hero h1{font-family:var(--font-display);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;color:var(--ink);margin:.8rem 0 1rem;letter-spacing:.01em}
 .legal-meta{font-family:var(--font-ui);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-ghost)}
@@ -382,44 +325,13 @@ Description: Luxury spiritual wellness. ACF + CPT. Fully free stack. Zero paid p
   .cta-layout{grid-template-columns:1fr;gap:3rem}
   .cta-text-col{position:static}
   .footer-grid{grid-template-columns:1fr 1fr}
-  .sk-foot-mid{grid-template-columns:1fr 1fr;gap:2rem}
-}
 @media(max-width:768px){
   .footer-grid{grid-template-columns:1fr;gap:2rem}
   .footer-bottom{flex-direction:column;gap:1.5rem;text-align:center}
   /* Footer mobile — clean single column, generous spacing */
-  .footer.sk-footer-v2 .wrap{padding-left:1.5rem;padding-right:1.5rem}
-  .sk-foot-top{padding:3rem 0 2rem}
-  .sk-foot-wordmark{font-size:clamp(2.8rem,14vw,4.5rem) !important}
-  .sk-foot-tagline{font-size:.9rem}
-  .sk-foot-mid{
-    grid-template-columns:1fr 1fr;
-    gap:2.2rem 1.5rem;
-    padding:2rem 0;
-  }
-  .sk-foot-col-label{margin-bottom:1rem}
-  .sk-foot-col a{font-size:.88rem}
-  .sk-foot-col ul{gap:.75rem}
-  .sk-foot-brand-row{flex-direction:column;align-items:flex-start;gap:1rem}
-  .sk-foot-bottom{
-    flex-direction:column;
-    gap:.65rem;
-    text-align:center;
-    padding:1.5rem 0 2.5rem;
-  }
-  .sk-foot-location{display:none}/* remove redundant location on mobile — already in hero */
   .sk-form-row-double{grid-template-columns:1fr}
   .cta-layout{gap:2.5rem}
   /* Footer extra-small — two columns, safe left edge */
-  .footer.sk-footer-v2 .wrap{padding-left:1.25rem;padding-right:1.25rem}
-  .sk-foot-mid{grid-template-columns:1fr 1fr;gap:1.8rem 1.2rem;padding:1.8rem 0}
-  .sk-foot-col{padding-top:1.2rem}
-  .sk-foot-wordmark{font-size:clamp(2.4rem,16vw,3.5rem) !important}
-  .sk-foot-top{padding:2.5rem 0 1.5rem}
-  .sk-foot-bottom{padding:1.2rem 0 2rem;gap:.5rem}
-  .sk-foot-brand-row{gap:.75rem}
-  .sk-foot-col a{font-size:.8rem}
-  .sk-foot-col ul{gap:.55rem}
   /* Global small-screen */
   .sk-contact-fallback-form{padding:1.8rem 1.4rem}
   .sk-form-submit{flex-direction:column;align-items:stretch}
@@ -3740,10 +3652,6 @@ html {
   margin: 0;
   padding: 0;
 }
-footer.footer.sk-footer-v2 {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
 /* Eliminate any extra bottom padding from WordPress / theme body */
 .site-content,
 .site,
@@ -3759,9 +3667,6 @@ body {
 }
 
 /* Footer bottom row — tighten to remove excess space */
-.sk-foot-bottom {
-  padding-bottom: 2rem !important;
-}
 
 /* ── FIX 2: About section — perfectly equal 50/50 columns with centred gap ── */
 .about-layout--v13 {
@@ -5096,8 +5001,9 @@ footer.footer {
   }
 }
 
-} /* End of @layer legacy */
+
   .values-grid{grid-template-columns:1fr}
 @media(max-width:480px){
   .wrap,.wrap-narrow,.wrap-wide{padding:0 1.25rem;padding-left:1.25rem}
 }
+} /* End of @layer legacy */

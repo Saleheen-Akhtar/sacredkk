@@ -1,3 +1,4 @@
+@layer components {
 /* ═══════════════════════════════════════════════════════════
    OFFERINGS SECTION — Retro Carousel v10.0
    Horizontal scrolling carousel of parchment cards.
@@ -472,4 +473,5 @@
       0 8px 24px rgba(26,22,18,.12),
       0 24px 56px rgba(26,22,18,.16);
   }
+}
 }

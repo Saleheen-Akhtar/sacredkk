@@ -1,9 +1,7 @@
+@layer components {
 /* Extracted from legacy.css: top nav shell. */
 
 /* ── NAV ─────────────────────────────────────────────────── */
-body {
-  padding-left: 0;
-}
 
 .sk-sidenav {
   position: fixed;
@@ -890,4 +888,5 @@ body {
 }
 .nav-cta .btn:hover{
   transform:translateY(-1px) scale(1.02);
+}
 }

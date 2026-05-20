@@ -3,6 +3,7 @@
 
 @layer tokens {
   :root {
+  --sidenav-height: 82px;
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 2rem;
@@ -70,6 +71,7 @@
 }
 
 @layer base {
+  body { padding-left: 0; }
 html.sk-js-ready {
   scroll-behavior: auto;
 }

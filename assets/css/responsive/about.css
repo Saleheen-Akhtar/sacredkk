@@ -1,3 +1,4 @@
+@layer responsive {
 @media (min-width: 901px) {
   .sk-about__inner {
     grid-template-columns: minmax(220px, 400px) 1fr;
@@ -54,4 +55,5 @@
   .sk-about {
     background-attachment: scroll;
   }
+}
 }

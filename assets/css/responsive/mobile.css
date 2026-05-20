@@ -1,3 +1,4 @@
+@layer responsive {
 @media (max-width: 900px) {
   :root {
     --sk-section-padding: clamp(3.5rem, 10vw, 5rem);
@@ -23,4 +24,5 @@
   [data-magnetic] {
     transform: none !important;
   }
+}
 }
