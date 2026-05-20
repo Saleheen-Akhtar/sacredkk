@@ -1,8 +1,8 @@
 @layer components {
 .sk-about {
   position: relative;
-  padding-block: var(--sk-section-padding);
-  background: var(--ivory);
+  padding-block: var(--section-space-md);
+  background: var(--color-surface-canvas);
   background-image: var(--about-bg, none);
   background-size: cover;
   background-position: center;
@@ -28,9 +28,9 @@
   display: grid;
   grid-template-columns: minmax(18rem, 1fr) minmax(0, 1.15fr);
   align-items: stretch;
-  gap: clamp(3rem, 5vw, var(--space-xl));
+  gap: clamp(var(--space-xl), 5vw, 6rem);
   min-height: 30rem;
-  padding-right: clamp(var(--space-md), 4vw, var(--space-lg));
+  padding-right: clamp(1.5rem, 4vw, var(--space-lg));
 }
 
 .sk-about__brand-col {
@@ -83,14 +83,14 @@
   display: inline-flex;
   justify-content: space-between;
   white-space: nowrap;
-  padding-left: var(--space-xl);
+  padding-left: clamp(var(--space-xl), 5vw, 6rem);
   transform-origin: left center;
   font-family: var(--font-display);
-  font-size: clamp(0.95rem, 2.1vw, 2.1rem);
+  font-size: var(--font-size-sm);
   font-weight: 600;
   font-style: italic;
   letter-spacing: 0.05em;
-  color: var(--terra);
+  color: var(--color-text-accent);
 }
 
 .sk-about__content {
@@ -100,7 +100,7 @@
   align-self: stretch;
   min-width: 0;
   max-width: 100%;
-  padding-left: var(--space-md);
+  padding-left: var(--space-lg);
 }
 
 .sk-about__row {
@@ -126,12 +126,12 @@
 .sk-about__org {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+  font-size: var(--font-size-lg);
   font-weight: 700;
   font-style: italic;
   line-height: 1.35;
   letter-spacing: -0.01em;
-  color: var(--ink-muted);
+  color: var(--color-text-inverse-muted);
 }
 
 .sk-about__heading {
@@ -141,7 +141,7 @@
   font-weight: 300;
   line-height: 1.2;
   letter-spacing: -0.025em;
-  color: var(--ink);
+  color: var(--color-text-inverse);
 }
 
 .sk-about__bridge {
@@ -151,7 +151,7 @@
   font-size: clamp(1.1rem, 1.7vw, 1.65rem);
   font-weight: 800;
   line-height: 1.7;
-  color: var(--ink);
+  color: var(--color-text-inverse);
 }
 
 .sk-about__body {
@@ -162,7 +162,7 @@
   font-weight: 700;
   font-style: italic;
   line-height: 1.55;
-  color: var(--ink-muted);
+  color: var(--color-text-inverse-muted);
 }
 
 .sk-about__welcome {
@@ -173,27 +173,27 @@
   font-style: italic;
   line-height: 1.6;
   letter-spacing: 0.02em;
-  color: var(--ink-muted);
+  color: var(--color-text-inverse-muted);
 }
 
 .sk-about__site-link {
   position: relative;
   display: inline-block;
   padding: 0.05em 0.4em 0.1em;
-  border: 1px solid rgba(184, 98, 63, 0.35);
+  border: 1px solid rgba(var(--terra-rgb), 0.35);
   border-radius: 2em;
-  background: rgba(184, 98, 63, 0.05);
+  background: rgba(var(--terra-rgb), 0.05);
   text-decoration: none;
   font-style: normal;
   font-weight: 500;
   letter-spacing: 0.01em;
-  color: var(--terra);
-  transition: background 0.25s, border-color 0.25s, color 0.25s;
+  color: var(--color-text-accent);
+  transition: background var(--duration-fast) var(--ease), border-color var(--duration-fast) var(--ease), color var(--duration-fast) var(--ease);
 }
 
 .sk-about__site-link:hover {
-  background: rgba(184, 98, 63, 0.12);
-  border-color: rgba(184, 98, 63, 0.65);
-  color: var(--terra);
+  background: rgba(var(--terra-rgb), 0.12);
+  border-color: rgba(var(--terra-rgb), 0.65);
+  color: var(--color-text-accent);
 }
 }

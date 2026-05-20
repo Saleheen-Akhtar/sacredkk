@@ -153,8 +153,6 @@
 .cta-sub{font-family:var(--font-display);font-size:1.1rem;font-weight:300;font-style:italic;color:rgba(255,255,255,.4);line-height:1.8;margin-bottom:3rem}
 
 /* Contact info links — email + phone in the dark CTA section */
-.sk-contact-info-links{display:flex;flex-direction:column;gap:.6rem;margin-top:-.5rem;margin-bottom:2.5rem}
-.sk-info-link{font-family:var(--font-ui);font-size:.78rem;font-weight:400;letter-spacing:.08em;color:var(--blush);text-decoration:none;transition:color .25s,opacity .25s;opacity:.85}
 .sk-info-link:hover{color:#fff;opacity:1}
 /* Map block in CTA */
 .cta-map-block{
@@ -205,50 +203,13 @@
 }
 
 /* ── Contact Globe ── */
-.sk-contact-globe-wrap {
-  margin-top: 2.5rem;
-  width: 100%;
-  max-width: 420px;
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  /* Subtle gold border matching dark section palette */
-  border: 1px solid rgba(212,175,106,0.12);
-  box-shadow: 0 8px 40px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(212,175,106,0.06);
-  background: radial-gradient(ellipse 80% 70% at 50% 60%, rgba(196,144,42,0.06) 0%, transparent 70%),
-              #0d0b09;
-}
-.sk-contact-globe-wrap canvas {
-  display: block;
-  width: 100%;
-  cursor: grab;
-}
-.sk-contact-globe-wrap canvas:active {
-  cursor: grabbing;
-}
 /* Mobile: full width */
 @media (max-width: 900px) {
-  .sk-contact-globe-wrap {
-    max-width: 100%;
-  }
 }
 
 /* ── CONTACT FORM ─────────────────────────────────────────── */
-.sk-contact-fallback-form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:2.8rem 2.4rem}
-.sk-form-title{font-family:var(--font-ui);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:2rem;display:block}
 .sk-form-row{margin-bottom:1.2rem}
 .sk-form-row-double{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem}
-.sk-contact-fallback-form label{display:block;font-family:var(--font-ui);font-size:.58rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.5rem}
-.sk-contact-fallback-form input,
-.sk-contact-fallback-form textarea,
-.sk-contact-fallback-form select{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:rgba(255,255,255,.82);font-family:var(--font-display);font-size:1rem;font-weight:300;padding:.85rem 1.1rem;outline:none;transition:border-color .3s,background .3s,box-shadow .3s;-webkit-appearance:none}
-.sk-contact-fallback-form input::placeholder,
-.sk-contact-fallback-form textarea::placeholder{color:rgba(255,255,255,.22)}
-.sk-contact-fallback-form input:focus,
-.sk-contact-fallback-form textarea:focus,
-.sk-contact-fallback-form select:focus{border-color:rgba(184,98,63,.5);background:rgba(184,98,63,.07);box-shadow:0 0 0 3px rgba(184,98,63,.12)}
-.sk-contact-fallback-form textarea{min-height:140px;resize:vertical;line-height:1.7}
-.sk-form-select-wrap{position:relative}
 .sk-form-select-wrap::after{content:'↓';position:absolute;right:1.1rem;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.3);font-family:var(--font-ui);font-size:.7rem;pointer-events:none}
 .sk-form-select-wrap select{cursor:pointer;padding-right:2.5rem;color:rgba(255,255,255,.82) !important;background-color:rgba(255,255,255,.06) !important}
 .sk-form-select-wrap select option{background-color:var(--ink-mid) !important;color:rgba(255,255,255,.85) !important}
@@ -281,17 +242,7 @@
   border:1px solid rgba(228,189,160,.18);
   border-radius:10px;
 }
-.sk-contact-fallback-form .btn,.sk-contact-fallback-form .btn-primary{font-family:var(--font-ui);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:.95rem 2.6rem;border-radius:var(--r-btn);background:var(--terra);color:#fff;border:none;cursor:pointer;transition:background .3s,transform .3s,box-shadow .3s;box-shadow:0 4px 20px rgba(184,98,63,.3);display:inline-flex;align-items:center;gap:.6rem;position:relative;white-space:nowrap}
-.sk-contact-fallback-form .btn span,.sk-contact-fallback-form .btn-primary span{transition:transform .3s var(--ease);display:inline-block}
-.sk-contact-fallback-form .btn:hover,.sk-contact-fallback-form .btn-primary:hover{background:var(--terra-dark);transform:translateY(-2px);box-shadow:0 8px 32px rgba(184,98,63,.38)}
-.sk-contact-fallback-form .btn:hover span,.sk-contact-fallback-form .btn-primary:hover span{transform:translateX(4px)}
-.sk-contact-fallback-form input.sk-invalid,
-.sk-contact-fallback-form textarea.sk-invalid,
-.sk-contact-fallback-form select.sk-invalid{border-color:#c94f4f !important;background:rgba(201,79,79,.07) !important}
 .sk-field-error{font-family:var(--font-ui);font-size:.6rem;letter-spacing:.1em;color:#e07070;margin-top:.35rem;display:block}
-.sk-contact-fallback-form input.sk-valid,
-.sk-contact-fallback-form textarea.sk-valid,
-.sk-contact-fallback-form select.sk-valid{border-color:rgba(122,149,121,.55) !important}
 
 .legal-hero{padding:8rem 0 4rem;background:var(--ivory-warm);border-bottom:1px solid var(--border);text-align:center}
 .legal-hero h1{font-family:var(--font-display);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;color:var(--ink);margin:.8rem 0 1rem;letter-spacing:.01em}
@@ -321,8 +272,6 @@
   .cta-layout{gap:2.5rem}
   /* Footer extra-small — two columns, safe left edge */
   /* Global small-screen */
-  .sk-contact-fallback-form{padding:1.8rem 1.4rem}
-  .sk-form-submit{flex-direction:column;align-items:stretch}
   .sk-form-submit .btn,.sk-form-submit .btn-primary{text-align:center;justify-content:center}
 /* Native CSS smooth scroll disabled — Lenis handles all smooth scrolling for consistency across Chrome, Firefox, Safari, Edge */
 /* @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}} */
@@ -354,14 +303,6 @@
 /* (already exists in base CSS, kept as-is) */
 
 /* ── 12. FORM INPUTS — focus ring with spring ─────────────── */
-.sk-contact-fallback-form input,
-.sk-contact-fallback-form textarea,
-.sk-contact-fallback-form select{
-  transition:
-    border-color .28s var(--ease),
-    background .28s var(--ease),
-    box-shadow .28s var(--ease);
-}
 
 /* ── 13. MODAL CLOSE BUTTON — terra primary, spin on hover ── */
 
@@ -426,8 +367,8 @@
 
 /* Individual member card */
 .sk-team-member-card {
-  background: var(--ivory);
-  border: 1px solid var(--border-light);
+  background: var(--color-surface-canvas);
+  border: 1px solid var(--color-border-light);
   border-radius: var(--r-card);
   overflow: hidden;
   display: flex;
@@ -618,7 +559,7 @@
 /* ── Individual card ── */
 .sk-tmv2-card {
   background: var(--parchment);
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--color-border-light);
   border-radius: 18px;
   overflow: hidden;
   display: flex;
@@ -916,7 +857,7 @@
 /* ── Post Hero ── */
 .sk-post-hero {
   padding: 7rem 0 3rem;
-  background: var(--ivory);
+  background: var(--color-surface-canvas);
   text-align: center;
 }
 .sk-post-meta {
@@ -1200,7 +1141,7 @@
 .sk-search-input {
   flex: 1; padding: 0.9rem 1.4rem;
   border: 1px solid var(--border); border-radius: var(--r-btn);
-  background: var(--ivory); font-family: var(--font-display);
+  background: var(--color-surface-canvas); font-family: var(--font-display);
   font-size: 1.1rem; color: var(--ink); outline: none;
   transition: border-color .2s, box-shadow .2s;
   -webkit-appearance: none; appearance: none; /* Firefox fix */
@@ -1264,8 +1205,8 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
 
 .sk-newsletter-card {
   position: relative;
-  background: var(--ivory);
-  border: 1px solid var(--border-light);
+  background: var(--color-surface-canvas);
+  border: 1px solid var(--color-border-light);
   border-radius: var(--r-card);
   box-shadow: var(--shadow-card);
   padding: 5rem 4rem 4rem;
@@ -1495,225 +1436,48 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
 /* 1. Section & Card Container */
 /* Note: .cta-section background is set to var(--ink)/#1a1612 in the base styles at line ~553. Removed duplicate !important override. */
 
-.sk-contact-card {
-    background: var(--ivory, #fdfbf5) !important;
-    padding: clamp(1.5rem, 3vw, 2.2rem) !important;
-    border-radius: var(--r-card) !important;
-    border: 1px solid rgba(212, 175, 106, 0.22) !important;
-    box-shadow: 0 12px 50px rgba(0,0,0,0.4), 0 2px 0 rgba(255,255,255,0.08) !important;
-}
 
 /* Card header tighter */
-.sk-contact-card .sk-contact-card-header {
-    margin-bottom: 1.2rem !important;
-}
 /* Card header text — dark on light card */
-.sk-contact-card .sk-contact-card-header .display-h3,
-.sk-contact-card .sk-contact-card-header h3 {
-    color: var(--ink, #1a1612) !important;
-}
-.sk-contact-card .sk-contact-card-header h3 em {
-    color: var(--terra) !important;
-}
-.sk-contact-card .sk-contact-card-header .eyebrow-c,
-.sk-contact-card .sk-contact-card-header .eyebrow {
-    color: var(--terra) !important;
-}
 
 /* 2. Row & Column Layout */
-.sk-contact-card .forminator-custom-form {
-    display: block !important;
-}
 
-.sk-contact-card .forminator-row {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 0.75rem !important;
-    margin-bottom: 0.75rem !important;
-}
 
-.sk-contact-card .forminator-row-last {
-    margin-bottom: 0 !important;
-}
 
-.sk-contact-card .forminator-col-6 {
-    flex: 1 1 calc(50% - 0.375rem) !important;
-    min-width: 0 !important;
-}
 
-.sk-contact-card .forminator-col-12 {
-    flex: 0 0 100% !important;
-    width: 100% !important;
-}
 
 /* 3. Labels — smaller, tighter */
-.sk-contact-card .forminator-label {
-    font-family: var(--font-ui) !important;
-    font-size: 0.72rem !important;
-    letter-spacing: 0.04em !important;
-    text-transform: uppercase !important;
-    color: rgba(26,22,18,0.45) !important;
-    margin-bottom: 0.3rem !important;
-    display: block !important;
-}
 
 /* 4. Inputs — compact */
-.sk-contact-card input,
-.sk-contact-card textarea,
-.sk-contact-card select {
-    width: 100% !important;
-    padding: 0.65rem 1rem !important;
-    background: rgba(26,22,18,0.04) !important;
-    border: 1px solid rgba(26,22,18,0.14) !important;
-    border-radius: var(--r-btn) !important;
-    font-family: var(--font-display) !important;
-    font-size: 0.95rem !important;
-    color: var(--ink, #1a1612) !important;
-    box-sizing: border-box !important;
-    transition: all 0.3s var(--ease) !important;
-}
 
 /* Placeholder text */
-.sk-contact-card input::placeholder,
-.sk-contact-card textarea::placeholder {
-    color: rgba(26,22,18,0.3) !important;
-}
 
 /* Focus State */
-.sk-contact-card input:focus,
-.sk-contact-card textarea:focus,
-.sk-contact-card select:focus {
-    border-color: var(--terra) !important;
-    box-shadow: 0 0 0 3px rgba(184, 98, 63, 0.10) !important;
-    outline: none !important;
-}
 
 /* 5. Dropdown */
-.sk-contact-card select {
-    appearance: none !important;
-    -webkit-appearance: none !important;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23b8623f' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E") !important;
-    background-repeat: no-repeat !important;
-    background-position: right 1rem center !important;
-    background-color: rgba(26,22,18,0.04) !important;
-    padding-right: 2.5rem !important;
-    cursor: pointer !important;
-    color: var(--ink, #1a1612) !important;
-}
 
 /* 6. Textarea — shorter default */
-.sk-contact-card textarea {
-    min-height: 80px !important;
-    height: auto !important;
-    overflow: hidden !important;
-    resize: none !important;
-    field-sizing: content;
-}
 
 /* Hide character counter — reduces visual clutter */
-.sk-contact-card .forminator-description {
-    display: none !important;
-}
 
 /* 7. Submit Button — fully themed to match site's .btn-primary */
-.sk-contact-card .forminator-button-submit {
-    width: 100% !important;
-    padding: 0.9rem 2rem !important;
-    background: var(--terra) !important;        /* was: var(--terracotta, …) — undefined var */
-    color: #fff !important;
-    font-family: var(--font-ui) !important;
-    font-size: 0.7rem !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.2em !important;           /* match .btn-primary letter-spacing */
-    text-transform: uppercase !important;
-    border: none !important;
-    border-radius: var(--r-btn) !important;
-    cursor: pointer !important;
-    box-shadow: 0 4px 20px rgba(184,98,63,.28) !important;  /* match .btn-primary shadow */
-    transition: background 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s !important;
-    margin-top: 0.5rem !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 0.5rem !important;
-    position: relative !important;
-}
 
-.sk-contact-card .forminator-button-submit::after {
-    content: '→' !important;
-    transition: transform 0.3s var(--ease) !important;
-    display: inline-block !important;
-}
 
-.sk-contact-card .forminator-button-submit:hover {
-    background: var(--terra-dark) !important;   /* was: var(--gold) — jarring off-theme */
-    transform: translateY(-2px) !important;
-    box-shadow: 0 8px 32px rgba(184,98,63,.42) !important;
-}
 
-.sk-contact-card .forminator-button-submit:hover::after {
-    transform: translateX(4px) !important;
-}
 
-.sk-contact-card .forminator-button-submit:active {
-    transform: translateY(0) !important;
-    box-shadow: 0 2px 10px rgba(184,98,63,.2) !important;
-}
 
 /* 8. Error States */
-.sk-contact-card .forminator-error-message {
-    font-family: var(--font-ui) !important;
-    font-size: 0.65rem !important;
-    color: #c94f4f !important;
-    padding-top: 0.3rem !important;
-    display: block !important;
-}
 
-.sk-contact-card .forminator-has_error input,
-.sk-contact-card .forminator-has_error textarea {
-    border-color: #c94f4f !important;
-    background: rgba(201, 79, 79, 0.02) !important;
-}
 
 /* 9. Mobile */
 @media (max-width: 650px) {
-    .sk-contact-card .forminator-col-6 {
-        flex: 0 0 100% !important;
-        width: 100% !important;
-    }
 }
 /* ── Error Messages ───────────────────────────────────────── */
 
 /* Error state: subtle red border + faint bg tint for visibility */
-.sk-contact-card .forminator-has_error input,
-.sk-contact-card .forminator-has_error textarea,
-.sk-contact-card .forminator-has_error select {
-    border-color: rgba(201, 79, 79, 0.55) !important;
-    background: rgba(201, 79, 79, 0.03) !important;
-}
 
 /* Modern inline error — small, muted, with a warning icon */
-.sk-contact-card .forminator-error-message,
-.sk-contact-card .forminator-field--error .forminator-error-message {
-    display: flex !important;
-    align-items: center !important;
-    gap: 0.25rem !important;
-    font-family: var(--font-ui) !important;
-    font-size: 0.68rem !important;
-    font-weight: 500 !important;
-    font-style: normal !important;
-    color: #b85c3a !important;
-    margin-top: 0.3rem !important;
-    letter-spacing: 0.01em !important;
-    list-style: none !important;
-}
 
-.sk-contact-card .forminator-error-message::before {
-    content: "⚠" !important;
-    font-size: 0.6rem !important;
-    opacity: 0.8 !important;
-    flex-shrink: 0 !important;
-}
 
 
 /* ==========================================================================
@@ -1726,12 +1490,12 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
   padding: 3rem 0 1.5rem;
   text-align: center;
   overflow: hidden;
-  background: var(--bg);
+  background: var(--color-surface-canvas);
 }
 .sk-collective-hero-inner { position: relative; z-index: 2; }
 
 /* Section */
-.sk-collective-section { background: var(--bg); }
+.sk-collective-section { background: var(--color-surface-canvas); }
 
 /* Grids */
 .sk-collective-grid {
@@ -1747,8 +1511,8 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
 
 /* Card */
 .sk-collective-card {
-  background: var(--ivory);
-  border: 1px solid var(--border-light);
+  background: var(--color-surface-canvas);
+  border: 1px solid var(--color-border-light);
   border-radius: var(--r-card);
   overflow: hidden;
   display: flex;
@@ -2539,7 +2303,7 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
 
 .sk-story-card {
   background: #fff;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--color-border-light);
   border-top: 3px solid var(--terra);
   border-radius: var(--r-card);
   padding: 2rem;
@@ -2555,7 +2319,7 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
 }
 .sk-story-card--featured {
   border-top-color: var(--terra-dark);
-  background: var(--ivory);
+  background: var(--color-surface-canvas);
 }
 
 .sk-story-stars { display: flex; gap: .2rem; }
@@ -2727,7 +2491,7 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
   flex: 0 0 calc(50% - 0.75rem);
   scroll-snap-align: start;
   background: #fff;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--color-border-light);
   border-radius: var(--r-card);
   padding: 2rem;
   display: flex;
@@ -2773,7 +2537,7 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
    EVENTS ARCHIVE PAGE — /events/
    ══════════════════════════════════════════════════════════════════════ */
 
-.sk-events-page { background: var(--ivory); min-height: 70vh; }
+.sk-events-page { background: var(--color-surface-canvas); min-height: 70vh; }
 
 .sk-events-hero {
   background: var(--ink);
@@ -2810,7 +2574,7 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
 /* Event card */
 .sk-event-card {
   background: #fff;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--color-border-light);
   border-radius: var(--r-card);
   overflow: hidden;
   display: flex;
@@ -2960,7 +2724,7 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
    SINGLE EVENT PAGE
    ══════════════════════════════════════════════════════════════════════ */
 
-.sk-single-event { background: var(--ivory); }
+.sk-single-event { background: var(--color-surface-canvas); }
 
 .sk-event-single-hero {
   background: var(--ink);
@@ -3026,7 +2790,7 @@ div.sharedaddy.sd-like-enabled .sd-like-title {
 /* Details card / sidebar */
 .sk-event-details-card {
   background: #fff;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--color-border-light);
   border-radius: var(--r-card);
   padding: 2rem;
   box-shadow: var(--shadow-card);
@@ -4080,7 +3844,7 @@ footer.footer {
   display: flex;
   flex-direction: column;
   background: rgba(253, 251, 245, 0.85);
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--color-border-light);
   border-radius: var(--r-card);
   overflow: hidden;
   text-decoration: none;
@@ -4178,14 +3942,14 @@ footer.footer {
 
 .sk-stories-page {
   min-height: 100vh;
-  background: var(--ivory);
+  background: var(--color-surface-canvas);
   padding-bottom: 8rem;
 }
 
 /* Masthead */
 .sk-stories-masthead {
   padding: 6rem 0 0;
-  background: var(--ivory);
+  background: var(--color-surface-canvas);
 }
 .sk-stories-masthead__inner {
   display: flex;
@@ -4238,7 +4002,7 @@ footer.footer {
 
 /* Filter bar */
 .sk-stories-filter-wrap {
-  background: var(--ivory);
+  background: var(--color-surface-canvas);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -4260,7 +4024,7 @@ footer.footer {
   text-transform: uppercase;
   color: var(--ink-muted);
   background: transparent;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--color-border-light);
   border-radius: 100px;
   padding: 0.4rem 1rem;
   cursor: pointer;
@@ -4285,7 +4049,7 @@ footer.footer {
   border-radius: var(--r-card);
   overflow: hidden;
   box-shadow: var(--shadow-card);
-  background: var(--ivory);
+  background: var(--color-surface-canvas);
 }
 .sk-story-hero__img-link { display: block; height: 100%; }
 .sk-story-hero__img-link .sk-story-hero__img { height: 100%; }
@@ -4313,7 +4077,7 @@ footer.footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--color-border-light);
   border-left: none;
 }
 .sk-story-hero__meta {
@@ -4440,14 +4204,14 @@ footer.footer {
 @media (max-width: 600px) {
   .sk-stories-grid { grid-template-columns: 1fr; }
   .sk-story-hero { grid-template-columns: 1fr; }
-  .sk-story-hero__content { padding: 2rem; border: 1px solid var(--border-light); border-top: none; }
+  .sk-story-hero__content { padding: 2rem; border: 1px solid var(--color-border-light); border-top: none; }
   .sk-stories-masthead__inner { flex-direction: column; align-items: flex-start; }
   .sk-stories-masthead__sub { text-align: left; }
 }
 
 .sk-story-card {
-  background: var(--ivory);
-  border: 1px solid var(--border-light);
+  background: var(--color-surface-canvas);
+  border: 1px solid var(--color-border-light);
   border-radius: var(--r-card);
   overflow: hidden;
   display: flex;
@@ -4542,7 +4306,7 @@ footer.footer {
    ═══════════════════════════════════════════════════════════════ */
 
 .sk-story-single {
-  background: var(--ivory);
+  background: var(--color-surface-canvas);
   min-height: 100vh;
   padding-bottom: 8rem;
 }
@@ -4721,9 +4485,9 @@ footer.footer {
   text-decoration: none;
   color: inherit;
   border-radius: var(--r-card);
-  background: var(--ivory);
+  background: var(--color-surface-canvas);
   box-shadow: var(--shadow-card);
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--color-border-light);
   overflow: hidden;
   transition: box-shadow 0.35s var(--ease);
 }
@@ -4855,6 +4619,6 @@ footer.footer {
 
   .values-grid{grid-template-columns:1fr}
 @media(max-width:480px){
-  .wrap,.wrap-narrow,.wrap-wide{padding:0 1.25rem;padding-left:1.25rem}
+  .wrap,.wrap-narrow,.wrap-wide{padding-inline: 1.25rem}
 }
 } /* End of @layer legacy */

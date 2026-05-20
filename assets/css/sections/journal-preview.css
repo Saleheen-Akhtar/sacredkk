@@ -7,8 +7,8 @@
   /* Footer-adjacent position: reduced top breathing room,
      ivory-warm bg signals a gentle section change from the dark CTA above */
   padding: 4rem 0 5rem;
-  background: var(--ivory-warm);
-  border-top: 1px solid var(--border-light);
+  background: var(--color-surface-warm);
+  border-top: 1px solid var(--color-border-light);
 }
 
 /* Masthead title — now uses global .display-h2; this rule kept for layout context */
@@ -28,7 +28,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
-  background: rgba(26,22,18,0.35);
+  background: rgba(var(--ink-rgb),0.35);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   padding: 0.2rem 0.6rem;
@@ -45,19 +45,19 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-white);
-  background: var(--terra);
+  background: var(--color-text-accent);
   text-decoration: none;
   padding: 0.65rem 1.4rem;
   border-radius: var(--r-btn);
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s, gap 0.2s;
   white-space: nowrap;
-  box-shadow: 0 4px 16px rgba(184,98,63,0.28);
+  box-shadow: 0 4px 16px rgba(var(--terra-rgb),0.28);
   align-self: flex-end;
 }
 .sk-jp-see-all:hover {
   background: var(--terra-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(184,98,63,0.38);
+  box-shadow: 0 6px 24px rgba(var(--terra-rgb),0.38);
   gap: 0.7rem;
   color: var(--color-white);
 }
@@ -99,10 +99,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--parchment);
+  background: var(--color-surface-parchment);
   font-family: var(--font-display);
   font-size: 4rem;
-  color: var(--gold);
+  color: var(--color-text-accent-gold);
   opacity: 0.5;
 }
 .sk-jp-featured:hover .sk-jp-featured-img { transform: scale(1.04); }
@@ -117,10 +117,10 @@
   padding: 1.4rem 1.6rem;
   background: linear-gradient(
     to bottom,
-    rgba(26,22,18,0.18) 0%,
+    rgba(var(--ink-rgb),0.18) 0%,
     transparent 35%,
     transparent 55%,
-    rgba(26,22,18,0.72) 100%
+    rgba(var(--ink-rgb),0.72) 100%
   );
   pointer-events: none;
 }
@@ -145,7 +145,7 @@
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--color-text-inverse);
   background: rgba(251,250,246,0.92);
   border-radius: var(--r-pill);
   padding: 0.3rem 0.85rem 0.3rem 0.65rem;
@@ -157,7 +157,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--gold);
+  background: var(--color-text-accent-gold);
   flex-shrink: 0;
 }
 .sk-jp-feat-bottom {
@@ -175,7 +175,7 @@
   color: var(--color-white);
   margin: 0;
   flex: 1;
-  text-shadow: 0 1px 12px rgba(26,22,18,0.35);
+  text-shadow: 0 1px 12px rgba(var(--ink-rgb),0.35);
 }
 .sk-jp-feat-arrow {
   flex-shrink: 0;
@@ -186,24 +186,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--ink);
+  color: var(--color-text-inverse);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   transition: background 0.2s, transform 0.2s;
   pointer-events: auto;
 }
 .sk-jp-featured:hover .sk-jp-feat-arrow {
-  background: var(--terra);
+  background: var(--color-text-accent);
   color: var(--color-white);
   transform: rotate(45deg);
 }
 
 /* Keyboard focus — same visual feedback as hover (Fix: aria UX) */
 .sk-jp-featured-link:focus-visible .sk-jp-feat-arrow {
-  background: var(--terra);
+  background: var(--color-text-accent);
   color: var(--color-white);
   transform: rotate(45deg);
-  outline: 2px solid var(--terra);
+  outline: 2px solid var(--color-text-accent);
   outline-offset: 3px;
 }
 
@@ -215,8 +215,8 @@
   height: 100%;
 }
 .sk-jp-side-card {
-  background: var(--ivory);
-  border: 1px solid var(--border-light);
+  background: var(--color-surface-canvas);
+  border: 1px solid var(--color-border-light);
   border-radius: var(--r-card);
   overflow: hidden;
   display: flex;
@@ -240,7 +240,7 @@
   flex-shrink: 0;
   width: 38%;
   overflow: hidden;
-  background: var(--parchment);
+  background: var(--color-surface-parchment);
 }
 .sk-jp-side-img {
   width: 100%;
@@ -255,7 +255,7 @@
   justify-content: center;
   font-family: var(--font-display);
   font-size: 2.5rem;
-  color: var(--gold);
+  color: var(--color-text-accent-gold);
   opacity: 0.5;
 }
 .sk-jp-side-body {
@@ -281,14 +281,14 @@
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink);
-  background: var(--parchment);
+  color: var(--color-text-inverse);
+  background: var(--color-surface-parchment);
   border-radius: var(--r-pill);
   padding: 0.22rem 0.7rem 0.22rem 0.55rem;
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
 }
-.sk-jp-side-badge:hover { background: var(--gold-pale); color: var(--gold); }
+.sk-jp-side-badge:hover { background: rgba(var(--gold-rgb), .12); color: var(--color-text-accent-gold); }
 .sk-jp-side-date {
   font-family: var(--font-ui);
   font-size: 0.66rem;
@@ -301,18 +301,18 @@
   font-weight: 500;
   font-style: italic;
   line-height: 1.35;
-  color: var(--ink);
+  color: var(--color-text-inverse);
   margin: 0 0 0.55rem;
   flex: 1;
   transition: color 0.2s;
 }
-.sk-jp-side-card-link:hover .sk-jp-side-title { color: var(--gold); }
+.sk-jp-side-card-link:hover .sk-jp-side-title { color: var(--color-text-accent-gold); }
 .sk-jp-side-card-link:hover .sk-jp-side-img { transform: scale(1.05); }
 .sk-jp-side-excerpt {
   font-family: var(--font-ui);
   font-size: 0.8125rem; /* ~13px — legible at small viewport widths */
   line-height: 1.65;
-  color: var(--ink-muted);
+  color: var(--color-text-inverse-muted);
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2; /* minimum 2 lines so cards communicate value before a click */
@@ -359,7 +359,7 @@
 .sk-jp-sub {
   max-width: 42ch;
   margin-top: 1rem;
-  color: var(--ink-muted);
+  color: var(--color-text-inverse-muted);
 }
 
 /* ── Scroll-triggered slide-up animation ── */
@@ -389,7 +389,7 @@
 }
 /* Keep hover effect working after reveal */
 .sk-jp-card--visible:hover {
-  box-shadow: var(--shadow-card-hover, 0 12px 40px rgba(26,22,18,.12));
+  box-shadow: var(--shadow-card-hover, 0 12px 40px rgba(var(--ink-rgb),.12));
   transform: translateY(-4px);
 }
 

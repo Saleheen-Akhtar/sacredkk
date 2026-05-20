@@ -70,7 +70,7 @@
 
 .sk-sidenav-logo-name em {
   font-style: italic;
-  color: var(--terra);
+  color: var(--color-text-accent);
 }
 
 .sk-sidenav-links {
@@ -111,8 +111,8 @@
   z-index: 100;
   padding: 0.28em 0.65em;
   border-radius: 4px;
-  background: var(--ink);
-  color: var(--ivory);
+  background: var(--color-text-inverse);
+  color: var(--color-surface-canvas);
   font-family: var(--font-ui);
   font-size: 0.55rem;
   font-weight: 500;
@@ -139,7 +139,7 @@
   height: auto;
   padding: 0.3rem 0.5rem;
   border-radius: 50px;
-  color: var(--ink-muted);
+  color: var(--color-text-inverse-muted);
   font-family: var(--font-ui);
   font-size: 0.5rem;
   font-weight: 600;
@@ -156,7 +156,7 @@
 
 .sk-sidenav-links a:hover,
 .sk-sidenav-links a.active {
-  color: var(--terra);
+  color: var(--color-text-accent);
   background: rgba(184, 98, 63, 0.25);
   transform: scale(1.06);
 }
@@ -193,7 +193,7 @@
   padding: 0.4rem 0.9rem;
   border: none;
   border-radius: 50px;
-  background: var(--terra);
+  background: var(--color-text-accent);
   color: var(--color-white);
   font-family: var(--font-ui);
   font-size: 0.5rem;
@@ -208,7 +208,7 @@
 
 .sk-sidenav-cta .btn:hover,
 .sk-sidenav-cta-btn:hover {
-  background: #9e4e29;
+  background: var(--color-interactive-primary);
   transform: scale(1.04);
   box-shadow: 0 4px 14px rgba(184, 98, 63, 0.45);
 }
@@ -226,7 +226,7 @@
   width: 18px;
   height: 1.5px;
   border-radius: 2px;
-  background: var(--ink);
+  background: var(--color-text-inverse);
   transform-origin: center;
   transition: transform 0.35s ease, opacity 0.25s ease, width 0.25s ease;
 }
@@ -253,7 +253,7 @@
 }
 
 .sk-nav-gold {
-  color: var(--gold) !important;
+  color: var(--color-text-accent-gold) !important;
 }
 
 .sk-nav-icon {
@@ -377,8 +377,8 @@
 
   .sk-sidenav.open .sk-sidenav-links li {
     width: 100%;
-    border-top: 1px solid var(--border-light);
-    border-bottom: 1px solid var(--border-light);
+    border-top: 1px solid var(--color-border-light);
+    border-bottom: 1px solid var(--color-border-light);
   }
 
   .sk-sidenav.open .sk-sidenav-links a {
@@ -537,10 +537,10 @@
   }
   .sk-sidenav.open .sk-sidenav-links li {
     width: 100% !important;
-    border-bottom: 1px solid var(--border-light) !important;
+    border-bottom: 1px solid var(--color-border-light) !important;
   }
   .sk-sidenav.open .sk-sidenav-links li:first-child {
-    border-top: 1px solid var(--border-light) !important;
+    border-top: 1px solid var(--color-border-light) !important;
   }
   .sk-sidenav.open .sk-sidenav-links a {
     height: 48px !important;
@@ -640,7 +640,7 @@
 }
 .nav.scrolled {
   border-bottom: none !important;
-  box-shadow: 0 1px 32px rgba(26,22,18,.06) !important;
+  box-shadow: 0 1px 32px rgba(var(--ink-rgb),.06) !important;
 }
 
 /* ── FIX 4B: Remove underline effect from "The Collective" nav link ── */
@@ -690,7 +690,7 @@
 .nav--top,
 .nav:not(.scrolled) {
   border-bottom: none !important;
-  box-shadow: 0 1px 32px rgba(26,22,18,.06) !important;
+  box-shadow: 0 1px 32px rgba(var(--ink-rgb),.06) !important;
 }
 /* When transparent (on hero) */
 .home .nav:not(.scrolled) {
@@ -782,7 +782,7 @@ body {
     height: auto !important;
     margin: 0 0 1.2rem !important;
     padding-bottom: 1rem !important;
-    border-bottom: 1px solid var(--border-light) !important;
+    border-bottom: 1px solid var(--color-border-light) !important;
     border-radius: 0 !important;
   }
   .sk-sidenav-logo-img {
@@ -797,7 +797,7 @@ body {
     font-weight: 400 !important;
     letter-spacing: 0.08em !important;
     text-align: center !important;
-    color: var(--ink) !important;
+    color: var(--color-text-inverse) !important;
     white-space: nowrap !important;
   }
 
@@ -827,13 +827,13 @@ body {
   }
   .sk-sidenav-links a:hover,
   .sk-sidenav-links a.active {
-    background: rgba(184,98,63,0.09) !important;
-    color: var(--terra) !important;
+    background: rgba(var(--terra-rgb),0.09) !important;
+    color: var(--color-text-accent) !important;
     transform: none !important;
   }
   .sk-sidenav-links a.active {
-    background: rgba(184,98,63,0.13) !important;
-    border-left: 2px solid var(--terra) !important;
+    background: rgba(var(--terra-rgb),0.13) !important;
+    border-left: 2px solid var(--color-text-accent) !important;
     padding-left: calc(0.8rem - 2px) !important;
   }
 
@@ -843,7 +843,7 @@ body {
     padding-left: 0 !important;
     padding-top: 1rem !important;
     margin-top: 0.6rem !important;
-    border-top: 1px solid var(--border-light) !important;
+    border-top: 1px solid var(--color-border-light) !important;
     width: 100% !important;
   }
   .sk-sidenav-cta .btn {

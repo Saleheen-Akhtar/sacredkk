@@ -2,8 +2,8 @@
 .sk-home-hero,
 .sk-post-hero,
 .sk-collective-hero {
-  padding-top: clamp(7rem, 10vw, 9rem);
-  padding-bottom: var(--sk-section-padding);
+  padding-block-start: var(--section-space-lg);
+  padding-bottom: var(--section-space-md);
 }
 
 .sk-home-posts-section,
@@ -11,6 +11,6 @@
 .sk-post-footer,
 .sk-related-section,
 .sk-newsletter-section {
-  padding-bottom: var(--sk-section-padding);
+  padding-bottom: var(--section-space-md);
 }
 }

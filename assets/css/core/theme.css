@@ -1,86 +1,233 @@
-/* 1. Define Global Cascade Layers (Lowest to Highest Priority) */
+/* ============================================================
+   SACRED KOMPASS — DESIGN SYSTEM v2
+   Layer order: lowest → highest priority
+   ============================================================ */
 @layer legacy, tokens, base, layout, components, utilities, responsive, motion;
 
 @layer tokens {
   :root {
-  --color-error: #c94f4f;
-  --color-success: #7dba8b;
-  --color-white: #fff;
 
-  --sidenav-height: 82px;
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 4rem;
-  --space-xl: 6rem;
+    /* ─────────────────────────────────────────────────────────
+       TIER 1 — BASE TONES
+       DO NOT use these directly in component stylesheets.
+       They exist only so semantic tokens below can point at them.
+       ───────────────────────────────────────────────────────── */
 
-  /* Colors */
-  --ivory:          #FBFAF6;
-  --ivory-warm:     #F6F0E7;
-  --parchment:      #EDE3D2;
-  --parchment-deep: #E3D5C0;
-  --border:         #E0D5C4;
-  --border-light:   #EDE5D8;
-  --terra:          #B8623F;
-  --terra-dark:     #9A4D2E;
-  --terra-soft:     rgba(184,98,63,.10);
-  --blush:          #E4BDA0;
-  --sage:           #7A9579;
-  --gold:           #C4902A;
-  --gold-light:     #D4AF6A;
-  --gold-pale:      rgba(212,175,106,.12);
-  --gold-glow:      rgba(196,144,42,.07);
-  --ink:            #1A1612;
-  --ink-mid:        #3A332C;
-  --ink-muted:      #78695A;
-  --ink-ghost:      #A8998A;
-  --footer-bg:      #130F0C;
-  --celestial:      #FDFBF5;
+    /* Earthy neutrals */
+    --_ivory:          #FBFAF6;
+    --_ivory-warm:     #F6F0E7;
+    --_parchment:      #EDE3D2;
+    --_parchment-deep: #E3D5C0;
+    --_celestial:      #FDFBF5;
 
-  /* Typography */
-  --font-display: 'Cormorant Garamond','Times New Roman',serif;
-  --font-alt:     'Cormorant',serif;
-  --font-ui:      'Jost',system-ui,sans-serif;
-  --font-body:    var(--font-ui);
-  --font-serif:   var(--font-display);
+    /* Borders */
+    --_border:         #E0D5C4;
+    --_border-light:   #EDE5D8;
 
-  /* radius */
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --r-card:      18px;
-  --r-pill:      100px;
-  --r-btn:       8px;
+    /* Accent warm */
+    --_terra:          #B8623F;
+    --_terra-dark:     #9A4D2E;
+    --_blush:          #E4BDA0;
+    --_sage:           #7A9579;
 
-  /* motion */
-  --ease:        cubic-bezier(.25,.46,.45,.94);
-  --ease-spring: cubic-bezier(.34,1.56,.64,1);
-  --ease-soft:   cubic-bezier(.22,1,.36,1);
-  --ease-standard: cubic-bezier(.22,.61,.36,1);
+    /* Accent gold */
+    --_gold:           #C4902A;
+    --_gold-light:     #D4AF6A;
 
-  /* z-index */
-  --z-nav: 100;
-  --z-overlay: 200;
+    /* Ink scale */
+    --_ink:            #1A1612;
+    --_ink-mid:        #3A332C;
+    --_ink-muted:      #78695A;
+    --_ink-ghost:      #A8998A;
+    --_footer-bg:      #130F0C;
 
-  /* Layout */
-  --sk-content-max: 1360px;
-  --sk-content-narrow: 860px;
-  --sk-section-padding: clamp(4.5rem, 8vw, 7rem);
-  --section-py:   var(--sk-section-padding);
-  --sp-bg:        none;
+    /* Utility */
+    --_white:          #FFFFFF;
+    --_error:          #C94F4F;
+    --_success:        #7DBA8B;
 
-  /* Shadows */
-  --shadow-card: 0 4px 24px rgba(26,22,18,.07), 0 1px 4px rgba(26,22,18,.04);
-  --shadow-lift: 0 12px 40px rgba(26,22,18,.11), 0 2px 8px rgba(26,22,18,.05);
-}
+    /* ─────────────────────────────────────────────────────────
+       TIER 2 — SEMANTIC COLOR TOKENS
+       USE THESE in every component stylesheet.
+       ───────────────────────────────────────────────────────── */
+
+    /* Surfaces */
+    --color-surface-base:       var(--_ink);
+    --color-surface-raised:     var(--_ink-mid);
+    --color-surface-canvas:     var(--_ivory);
+    --color-surface-warm:       var(--_ivory-warm);
+    --color-surface-parchment:  var(--_parchment);
+    --color-surface-deep:       var(--_parchment-deep);
+    --color-surface-celestial:  var(--_celestial);
+    --color-surface-footer:     var(--_footer-bg);
+    --color-surface-ambient:    rgba(28, 25, 23, 0.4);
+    --color-surface-inverse:    var(--_celestial);
+
+    /* Typography */
+    --color-text-primary:       var(--_ivory);
+    --color-text-secondary:     rgba(255, 255, 255, 0.55);
+    --color-text-tertiary:      rgba(255, 255, 255, 0.35);
+    --color-text-inverse:       var(--_ink);
+    --color-text-inverse-muted: var(--_ink-muted);
+    --color-text-inverse-ghost: var(--_ink-ghost);
+    --color-text-accent:        var(--_terra);
+    --color-text-accent-gold:   var(--_gold);
+    --color-text-accent-blush:  var(--_blush);
+    --color-text-error:         var(--_error);
+    --color-text-success:       var(--_success);
+    --color-text-white:         var(--_white);
+
+    /* Borders & dividers */
+    --color-border-default:     var(--_border);
+    --color-border-light:       var(--_border-light);
+    --color-border-subtle:      rgba(214, 211, 209, 0.15);
+    --color-border-focus:       var(--_gold);
+    --color-border-accent:      var(--_terra);
+
+    /* Interactive states */
+    --color-interactive-primary:        var(--_terra);
+    --color-interactive-primary-hover:  var(--_terra-dark);
+    --color-interactive-ghost-hover:    var(--_parchment);
+
+    /* ─────────────────────────────────────────────────────────
+       TIER 3 — TYPOGRAPHY TOKENS
+       ───────────────────────────────────────────────────────── */
+
+    /* Font stacks */
+    --font-display:  'Cormorant Garamond', 'Times New Roman', serif;
+    --font-alt:      'Cormorant', serif;
+    --font-ui:       'Jost', system-ui, sans-serif;
+    /* Aliases for component usage */
+    --font-serif:    var(--font-display);
+    --font-body:     var(--font-ui);
+
+    /* Fluid type scale — clamp(min, fluid, max) */
+    --font-size-xs:   clamp(0.75rem,  0.71rem + 0.18vw,  0.875rem); /* 12→14px */
+    --font-size-sm:   clamp(0.875rem, 0.84rem + 0.18vw,  1rem);     /* 14→16px */
+    --font-size-md:   clamp(1rem,     0.96rem + 0.18vw,  1.125rem); /* 16→18px */
+    --font-size-lg:   clamp(1.25rem,  1.16rem + 0.45vw,  1.5rem);   /* 20→24px */
+    --font-size-xl:   clamp(1.75rem,  1.57rem + 0.89vw,  2.25rem);  /* 28→36px */
+    --font-size-2xl:  clamp(2.5rem,   2.14rem + 1.79vw,  3.5rem);   /* 40→56px */
+    --font-size-hero: clamp(3.5rem,   2.79rem + 3.57vw,  5.5rem);   /* 56→88px */
+
+    /* Line heights */
+    --line-height-hero:    1.1;
+    --line-height-heading: 1.2;
+    --line-height-body:    1.6;
+    --line-height-loose:   1.85;
+
+    /* Font weights */
+    --font-weight-light:   300;
+    --font-weight-regular: 400;
+    --font-weight-medium:  500;
+    --font-weight-bold:    700;
+    --font-weight-black:   800;
+
+    /* Line lengths */
+    --max-width-reading: 65ch;
+    --max-width-intro:   45ch;
+
+    /* ─────────────────────────────────────────────────────────
+       TIER 4 — SPACING TOKENS
+       ───────────────────────────────────────────────────────── */
+
+    /* Micro / component spacing — fixed */
+    --space-3xs:  4px;
+    --space-2xs:  8px;
+    --space-xs:  12px;
+    --space-sm:  16px;
+    --space-md:  24px;
+    --space-lg:  32px;
+    --space-xl:  48px;
+
+    /* Macro / section spacing — fluid */
+    --section-space-sm: clamp(3rem,   2.29rem + 3.57vw,  5rem);   /* 48→80px   */
+    --section-space-md: clamp(5rem,   3.93rem + 5.36vw,  8rem);   /* 80→128px  */
+    --section-space-lg: clamp(8rem,   6.57rem + 7.14vw, 12rem);   /* 128→192px */
+
+    /* Container */
+    --container-width-main:   1440px;
+    --container-width-narrow:  800px;
+    --container-padding: clamp(1rem, 0.64rem + 1.79vw, 2rem);     /* 16→32px   */
+
+    /* ── Legacy aliases — kept so existing section files don't break immediately.
+       Migrate each component to the new names, then delete these. ── */
+    --sk-content-max:     var(--container-width-main);
+    --sk-content-narrow:  var(--container-width-narrow);
+    --sk-section-padding: var(--section-space-md);
+    --section-py:         var(--section-space-md);
+
+    /* ─────────────────────────────────────────────────────────
+       TIER 5 — MOTION TOKENS
+       CSS variables that mirror JS motionTokens.
+       JS must read from window.SK.motion — do not duplicate logic.
+       ───────────────────────────────────────────────────────── */
+
+    /* Duration */
+    --duration-instant: 0ms;
+    --duration-fast:   400ms;
+    --duration-base:   800ms;
+    --duration-slow:  1400ms;
+    --duration-ambient: 3000ms;
+
+    /* Easing */
+    --ease:          cubic-bezier(0.25, 0.46, 0.45, 0.94);  /* soft decel */
+    --ease-spring:   cubic-bezier(0.34, 1.56, 0.64,  1);    /* overshoot  */
+    --ease-soft:     cubic-bezier(0.22,  1,   0.36,  1);    /* cinematic  */
+    --ease-standard: cubic-bezier(0.22, 0.61, 0.36,  1);    /* standard   */
+    --ease-exit:     cubic-bezier(0.4,   0,   1,     1);    /* power1.in  */
+
+    /* ─────────────────────────────────────────────────────────
+       TIER 6 — COMPONENT TOKENS
+       ───────────────────────────────────────────────────────── */
+
+    /* Border radius */
+    --radius-sm:   8px;
+    --radius-md:  16px;
+    --radius-lg:  18px;   /* cards */
+    --radius-pill: 100px;
+    --radius-btn:   8px;
+
+    /* Shadows */
+    --shadow-card: 0 4px 24px rgba(26,22,18,.07), 0 1px 4px rgba(26,22,18,.04);
+    --shadow-lift: 0 12px 40px rgba(26,22,18,.11), 0 2px 8px rgba(26,22,18,.05);
+
+    /* Z-index */
+    --z-base:    1;
+    --z-raised:  10;
+    --z-nav:     100;
+    --z-overlay: 200;
+    --z-toast:   300;
+
+    /* Navigation */
+    --sidenav-height: calc(60px + 1.4rem);
+
+    /* ─────────────────────────────────────────────────────────
+       TIER 7 — RGB CHANNEL TOKENS
+       For rgba() usage: rgba(var(--color-white-rgb), 0.5)
+       ───────────────────────────────────────────────────────── */
+    --color-white-rgb:        255, 255, 255;
+    --ink-rgb:                 26,  22,  18;
+    --color-error-rgb:        201,  79,  79;
+    --color-success-rgb:      125, 186, 139;
+    --terra-rgb:              184,  98,  63;
+    --gold-rgb:               196, 144,  42;
+  }
 }
 
 @layer base {
-  body { padding-left: 0; }
-html.sk-js-ready {
-  scroll-behavior: auto;
-}
+  html.sk-js-ready {
+    scroll-behavior: auto; /* Lenis controls all scrolling */
+  }
 
-body.sk-scroll-locked {
-  overflow: hidden;
-}
+  body {
+    padding-left: 0;
+    padding-bottom: var(--sidenav-height);
+    background-color: var(--color-surface-base);
+    color: var(--color-text-primary);
+  }
+
+  body.sk-scroll-locked {
+    overflow: hidden;
+  }
 }

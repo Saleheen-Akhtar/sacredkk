@@ -1,12 +1,12 @@
 @layer components {
 /* ── FOOTER v2 — Making Today inspired typographic style ─── */
-.footer.sk-footer-v2{background:var(--footer-bg);color:rgba(255,255,255,.55);padding:0;position:relative;z-index:2}
+.footer.sk-footer-v2{background:var(--color-surface-footer);color:rgba(255,255,255,.55);padding:0;position:relative;z-index:2}
 .sk-foot-top{padding:5rem 0 3.5rem}
 .sk-foot-brand-row{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;margin-bottom:1.5rem}
 .sk-foot-wordmark-wrap{display:flex;align-items:center;gap:1.25rem}
 .sk-foot-logo-img{display:block;height:72px;width:auto;max-width:80px;object-fit:contain}
 .sk-foot-wordmark{font-family:var(--font-display);font-size:clamp(3.2rem,8vw,7rem);font-weight:700;line-height:.9;letter-spacing:-.03em;color:rgba(255,255,255,.9)}
-.sk-foot-wordmark em{font-style:italic;color:var(--blush)}
+.sk-foot-wordmark em{font-style:italic;color:var(--color-text-accent-blush)}
 .sk-foot-cta{border-color:rgba(255,255,255,.22);color:rgba(255,255,255,.7);flex-shrink:0;align-self:center;font-size:.62rem;padding:.75rem 1.6rem}
 .sk-foot-cta:hover{border-color:rgba(255,255,255,.6);color:var(--color-white);background:rgba(255,255,255,.06)}
 .sk-foot-tagline{font-family:var(--font-display);font-size:1rem;font-weight:300;line-height:1.75;color:rgba(255,255,255,.52);max-width:480px}

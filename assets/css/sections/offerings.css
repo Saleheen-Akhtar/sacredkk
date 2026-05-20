@@ -9,8 +9,8 @@
 /* ── RETRO CAROUSEL SECTION ─────────────────────────────── */
 
 .sk-rc-section {
-  padding: var(--section-py) 0;
-  background: var(--ivory-warm);
+  padding-block: var(--section-space-md);
+  background: var(--color-surface-warm);
   overflow: hidden;
 }
 
@@ -19,7 +19,7 @@
   text-align: center;
   max-width: 680px;
   margin: 0 auto;
-  padding-bottom: 3rem;
+  padding-bottom: var(--space-xl);
 }
 .sk-rc-header .display-h2 {
   margin-top: .6rem;
@@ -42,7 +42,7 @@
   overflow-y: visible;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding: 2.5rem 4rem 2.5rem;
+  padding: var(--space-xl) var(--space-xl);
   justify-content: flex-start;
   cursor: grab;
   scroll-snap-type: none;
@@ -77,7 +77,7 @@
   border: none;
   cursor: pointer;
   /* Parchment gradient — from-[#f2f0eb] to-[var(--color-white)9eb] */
-  background: linear-gradient(to bottom, var(--ivory-warm), var(--color-white)bf0);
+  background: linear-gradient(to bottom, var(--color-surface-warm), var(--color-surface-celestial));
   border-radius: 24px;
   width: 320px;
   height: 460px;
@@ -88,13 +88,13 @@
   position: relative;
   overflow: hidden;
   box-shadow:
-    0 4px 16px rgba(26,22,18,.08),
-    0 12px 40px rgba(26,22,18,.10);
+    0 4px 16px rgba(var(--ink-rgb),.08),
+    0 12px 40px rgba(var(--ink-rgb),.10);
   /* Smooth 3D tilt transition - transform managed by GSAP/JS mousemove */
   transition:
     box-shadow .4s var(--ease-soft);
   will-change: transform;
-  padding: 2rem 1.5rem;
+  padding: var(--space-lg) var(--space-md);
   text-align: center;
 }
 
@@ -139,10 +139,10 @@
 /* Card number */
 .sk-rc-card-num {
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: var(--font-size-xl);
   font-weight: 300;
   font-style: italic;
-  color: var(--terra);
+  color: var(--color-text-accent);
   line-height: 1;
   position: relative;
   z-index: 2;
@@ -151,7 +151,7 @@
 /* Short description */
 .sk-rc-card-desc {
   font-family: var(--font-display);
-  font-size: 1.0rem;
+  font-size: var(--font-size-sm);
   font-weight: 300;
   color: rgba(31,27,29,.68);
   line-height: 1.65;
@@ -169,7 +169,7 @@
 /* Title */
 .sk-rc-card-name {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: var(--font-size-lg);
   font-weight: 400;
   color: rgba(31,27,29,.75);
   text-align: center;
@@ -208,12 +208,12 @@
   position: relative;
   z-index: 1;
   padding: .5rem 1.25rem;
-  background: var(--terra);
+  background: var(--color-text-accent);
   border: none;
   border-radius: var(--r-pill);
   display: inline-block;
   align-self: center;
-  box-shadow: 0 4px 16px rgba(184,98,63,.45);
+  box-shadow: 0 4px 16px rgba(var(--terra-rgb),.45);
 }
 
 /* ── Expanded Overlay (AnimatePresence equivalent) ─────── */
@@ -240,7 +240,7 @@
 .sk-rc-overlay-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(26,22,18,.35);
+  background: rgba(var(--ink-rgb),.35);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -251,15 +251,15 @@
   z-index: 1;
   width: 100%;
   max-width: 800px;
-  background: var(--ivory-warm);
+  background: var(--color-surface-warm);
   border-radius: 24px;
   max-height: 88vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   box-shadow:
-    0 8px 32px rgba(26,22,18,.18),
-    0 32px 80px rgba(26,22,18,.22);
+    0 8px 32px rgba(var(--ink-rgb),.18),
+    0 32px 80px rgba(var(--ink-rgb),.22);
   transform: translateY(28px);
   transition: transform .4s var(--ease-soft);
 }
@@ -283,7 +283,7 @@
   background: transparent;
 }
 #sk-rc-overlay-content::-webkit-scrollbar-thumb {
-  background: rgba(196,144,42,.3);
+  background: rgba(var(--gold-rgb),.3);
   border-radius: 2px;
 }
 
@@ -296,7 +296,7 @@
   width: 2.2rem;
   height: 2.2rem;
   border-radius: 50%;
-  background: var(--ink-mid);
+  background: var(--color-surface-raised);
   color: var(--color-white);
   align-items: center;
   justify-content: center;
@@ -307,7 +307,7 @@
   flex-shrink: 0;
 }
 .sk-rc-overlay-close:hover {
-  background: var(--terra);
+  background: var(--color-text-accent);
   transform: scale(1.1) rotate(90deg);
 }
 
@@ -316,7 +316,7 @@
   padding: 2.4rem 3rem 1.6rem;
   border-bottom: 1px solid rgba(31,27,29,.07);
   flex-shrink: 0;
-  background: linear-gradient(to bottom, var(--ivory-warm), rgba(242,240,235,.6));
+  background: linear-gradient(to bottom, var(--color-surface-warm), rgba(242,240,235,.6));
 }
 
 /* Overlay content */
@@ -326,16 +326,16 @@
   font-weight: 400;
   letter-spacing: .22em;
   text-transform: uppercase;
-  color: var(--terra);
+  color: var(--color-text-accent);
   margin-bottom: .5rem;
 }
 
 .sk-rc-ol-num {
   font-family: var(--font-display);
-  font-size: 3rem;
+  font-size: var(--font-size-hero);
   font-weight: 300;
   font-style: italic;
-  color: rgba(196,144,42,.12);
+  color: rgba(var(--gold-rgb),.12);
   line-height: .9;
   margin-bottom: -.3rem;
 }
@@ -345,7 +345,7 @@
   font-size: clamp(1.7rem, 3.5vw, 2.6rem);
   font-weight: 300;
   font-style: italic;
-  color: var(--ink);
+  color: var(--color-text-inverse);
   line-height: 1.15;
   letter-spacing: -.01em;
 }
@@ -358,7 +358,7 @@
 
 .sk-rc-ol-desc {
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: var(--font-size-md);
   font-weight: 400;
   color: rgba(31,27,29,.72);
   line-height: 1.9;
@@ -373,7 +373,7 @@
   gap: 1.5rem;
   padding: 1.4rem 3rem;
   border-top: 1px solid rgba(31,27,29,.08);
-  background: var(--ivory-warm);
+  background: var(--color-surface-warm);
   flex-shrink: 0;
   flex-wrap: wrap;
 }
@@ -398,7 +398,7 @@
   font-size: clamp(1.4rem, 2.5vw, 1.9rem);
   font-weight: 700;
   letter-spacing: -.02em;
-  color: var(--terra);
+  color: var(--color-text-accent);
   line-height: 1;
   position: relative;
   display: inline-block;
@@ -410,14 +410,14 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--terra), var(--gold));
+  background: linear-gradient(90deg, var(--color-text-accent), var(--color-text-accent-gold));
   border-radius: 2px;
   opacity: .5;
 }
 
 .sk-rc-ol-avail {
-  font-size: 12px;
-  color: var(--ink-muted);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-inverse-muted);
   display: block;
   margin-top: 4px;
 }
@@ -440,11 +440,11 @@
 }
 
 .sk-rc-ol-badge {
-  font-size: 12px;
+  font-size: var(--font-size-xs);
   padding: 4px 10px;
   border-radius: 20px;
   background: rgba(196,154,42,.12);
-  color: var(--gold);
+  color: var(--color-text-accent-gold);
   border: 1px solid rgba(196,154,42,.25);
   white-space: nowrap;
 }
@@ -470,8 +470,8 @@
 @media (hover: hover) and (pointer: fine) {
   .sk-rc-card:hover {
     box-shadow:
-      0 8px 24px rgba(26,22,18,.12),
-      0 24px 56px rgba(26,22,18,.16);
+      0 8px 24px rgba(var(--ink-rgb),.12),
+      0 24px 56px rgba(var(--ink-rgb),.16);
   }
 }
 }

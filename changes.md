@@ -40,3 +40,9 @@
 - **Responsive Recovery:** Appended three previously missing build array configurations for `cta.css`, `journal-preview.css`, and `newsletter.css` directly restoring dynamic grid mobile sizing capabilities that had regressed.
 - **Specifics Cleanup:** Cleaned ghost rule conflicts like `.sk-progress` and removed multiple competing unlayered padding structures over `body`, `.about-section` and `.journal-preview-section`. Cleaned out hardcoded inline values for JS configuration arrays directly returning JSON using minification flags on PHP templates `hero.php` and `offerings.php`.
 - **Colors Standardization:** Unified legacy inline hex strings such as `#fff` or `#c94f4f` to custom tokens `--color-white`, `--color-error` directly mapping properties globally inside `theme.css`. Removed static hardware overrides over GSAP elements inside `.strip--circular` philosophy file.
+
+## Design System Migration & Variable Normalization
+- **CSS Architecture Swap:** Replaced all base tone static tokens inside `theme.css` with a new, 7-tiered semantic abstraction scale allowing precise cross-referencing and consistent component consumption.
+- **Component File Migrations:** Ran mass replacements safely shifting values inside `typography.css`, `buttons.css`, `about.css`, `offerings.css`, `founders.css`, `footer.css`, `faq.css`, `hero.css`, `editorial.css`, and multiple other nested assets. Migrated standard transitions into variable aliases.
+- **Focus Verification:** Handled accessibility by adding robust `.focus-visible` hooks avoiding silent loss on element styling overriding standard `:focus` boundaries.
+- **JS Timings Standardization:** Updated `motion-config.js` manually pushing config specs explicitly to match the corresponding durations encoded dynamically into CSS arrays.

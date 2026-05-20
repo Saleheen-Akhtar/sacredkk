@@ -1,9 +1,9 @@
 @layer components {
 /* ── PHILOSOPHY STRIP ────────────────────────────────────── */
 .philosophy-strip-header{text-align:center;max-width:1100px;margin:0 auto 5rem;padding-bottom:2rem}
-.philosophy-strip-num{display:block;font-family:var(--font-display);font-size:1.5rem;font-weight:300;font-style:italic;color:var(--gold);opacity:.5;letter-spacing:.1em;margin-bottom:1rem}
-.philosophy-strip-intro{font-size:1.05rem;color:var(--ink-muted);line-height:1.75;margin-top:1.25rem;font-family:var(--font-body);max-width:52ch;margin-left:auto;margin-right:auto}
-.strip--circular{background-color:var(--ivory-warm);background-image:url('https://sacredkompass.org/wp-content/uploads/2026/05/astrology1.png');background-size:cover;background-position:center center;background-repeat:no-repeat;will-change:auto !important;backface-visibility:visible !important;padding:6rem 0 5rem;border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light);overflow:hidden;position:relative}
+.philosophy-strip-num{display:block;font-family:var(--font-display);font-size:1.5rem;font-weight:300;font-style:italic;color:var(--color-text-accent-gold);opacity:.5;letter-spacing:.1em;margin-bottom:1rem}
+.philosophy-strip-intro{font-size:1.05rem;color:var(--color-text-inverse-muted);line-height:1.75;margin-top:1.25rem;font-family:var(--font-body);max-width:52ch;margin-left:auto;margin-right:auto}
+.strip--circular{background-color:var(--color-surface-warm);background-image:url('https://sacredkompass.org/wp-content/uploads/2026/05/astrology1.png');background-size:cover;background-position:center center;background-repeat:no-repeat;will-change:auto !important;backface-visibility:visible !important;padding:6rem 0 5rem;border-top:1px solid var(--color-border-light);border-bottom:1px solid var(--color-border-light);overflow:hidden;position:relative}
 .strip--circular::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(253,251,245,0.55) 0%,rgba(240,228,200,0.45) 40%,rgba(253,251,245,0.58) 100%);pointer-events:none;z-index:0}
 .strip--circular > *{position:relative;z-index:1}
 .circular-testimonials{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:56rem;margin:0 auto;padding:2rem}
@@ -11,15 +11,15 @@
 .ct-img{position:absolute;width:100%;height:100%;object-fit:cover;border-radius:1.5rem;box-shadow:0 10px 30px rgba(0,0,0,.2);cursor:pointer; }
 .ct-content{display:flex;flex-direction:column;justify-content:flex-start;min-height:24rem;height:24rem;position:relative}
 .ct-text{transition:opacity .3s ease,transform .3s ease;flex:1;overflow:hidden;display:flex;flex-direction:column}
-.ct-name{font-family:var(--font-display);font-size:clamp(1.3rem,2.5vw,1.75rem);font-weight:300;color:var(--ink);margin-bottom:.3rem;letter-spacing:.01em}
-.ct-desig{font-family:var(--font-ui);font-size:.72rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:1.8rem}
-.ct-quote{font-family:var(--font-display);font-size:1.1rem;font-weight:300;color:var(--ink);line-height:1.78;flex:1;min-height:8rem}
+.ct-name{font-family:var(--font-display);font-size:clamp(1.3rem,2.5vw,1.75rem);font-weight:300;color:var(--color-text-inverse);margin-bottom:.3rem;letter-spacing:.01em}
+.ct-desig{font-family:var(--font-ui);font-size:.72rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-inverse-muted);margin-bottom:1.8rem}
+.ct-quote{font-family:var(--font-display);font-size:1.1rem;font-weight:300;color:var(--color-text-inverse);line-height:1.78;flex:1;min-height:8rem}
 .ct-word{display:inline-block;transition:filter .22s ease,opacity .22s ease,transform .22s ease}
 .ct-arrows{display:flex;gap:1.4rem;padding-top:1.5rem;flex-shrink:0;margin-top:auto}
-.ct-btn{width:2.7rem;height:2.7rem;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .25s var(--ease), transform .22s var(--ease-spring);border:none;background:var(--ink);color:#f1f1f7}
-.ct-btn:hover{background:var(--terra);transform:scale(1.1)}
+.ct-btn{width:2.7rem;height:2.7rem;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .25s var(--ease), transform .22s var(--ease-spring);border:none;background:var(--color-text-inverse);color:var(--color-surface-celestial)}
+.ct-btn:hover{background:var(--color-text-accent);transform:scale(1.1)}
 .ct-btn:active{transform:scale(.92) !important}
-.strip-num{font-family:var(--font-display);font-size:.62rem;font-weight:300;letter-spacing:.26em;color:var(--gold);margin-bottom:1.2rem;display:block}
+.strip-num{font-family:var(--font-display);font-size:.62rem;font-weight:300;letter-spacing:.26em;color:var(--color-text-accent-gold);margin-bottom:1.2rem;display:block}
 
 @media(min-width: 900px) {
   .circular-testimonials {max-width: 64rem;gap: 5rem;padding: 2rem 0;}
